@@ -1,0 +1,47 @@
+.mainContainer{
+background-color: #ebf3fe;
+}
+
+.panelBarPcContainer {
+    position: fixed;
+    width: 18rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-right: 1px solid #f3f4f6; /* Sağ tarafa hafif bir sınır ekledik */
+}
+
+.panelBarOtherContainer{
+    display: none;
+}
+
+
+.contextContainer{
+    margin-left: 18rem;
+    min-height: 150vh;
+}
+
+
+@media (max-width: 1024px) {
+    .panelBarPcContainer {
+        display: none; /* Mobilde gizle */
+    }
+    
+    .contextContainer {
+        margin-left: 0; /* Boşluğu kaldır */
+        width: 100%;    /* Tam ekran yap */
+        min-height: 100vh;
+    }
+
+    .panelBarOtherContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+

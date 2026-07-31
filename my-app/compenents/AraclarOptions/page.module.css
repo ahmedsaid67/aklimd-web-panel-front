@@ -1,0 +1,62 @@
+.mainContainer{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.pupupContainer{
+    width:100%;
+    height:17.5rem;
+
+    background:#fff;
+
+    padding:1rem;
+
+    border-radius:1rem 1rem 0 0;
+
+    touch-action:none;
+    will-change:transform;
+}
+
+.ustTabContainer{
+    display:flex;
+    justify-content:center;
+    margin-bottom:1rem;
+}
+
+.ustTab{
+    width:5rem;
+    height:.35rem;
+
+    background:#bdbdbd;
+
+    border-radius:999px;
+}
+
+.selectedContainer{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+    padding:1rem 0;
+
+    border-bottom:.08rem solid #d1d5db;
+
+    cursor:pointer;
+}
+
+.selectedText{
+    font-size:1rem;
+}
+
+.selectedContainer:last-child .selectedText{
+    color: #DC2626;
+}

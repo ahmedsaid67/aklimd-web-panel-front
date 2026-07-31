@@ -1,0 +1,78 @@
+.mainContainer {
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.closeContainer{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.kaydetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    background-color: #1D64F2;
+    border-radius: 1rem;
+
+    border: none;
+    outline: none;
+}
+
+.kaydetButton:disabled {
+    background-color: #93B6F8;
+}
+
+.kaydetText{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.listContainer{
+    flex: 1;
+    overflow-y: auto;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+    border-bottom: 0.08rem solid #d1d5db;
+    cursor: pointer;
+}
+
+.text{
+    font-size: 1rem;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1D64F2;
+}
+
+.selectedIcon{
+    color: #1D64F2;
+    flex-shrink: 0;
+}

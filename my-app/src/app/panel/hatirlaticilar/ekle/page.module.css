@@ -1,0 +1,109 @@
+.pageContainer {
+    padding: 2rem;
+}
+
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+.pageTitle {
+    font-size: 1.75rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+}
+
+
+.backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    
+    /* Boyutlandırma */
+    padding: 0.6rem 1.2rem;
+    height: 2.75rem; 
+    
+    /* Stil */
+    border: 0.08rem solid #d1d5db;
+    border-radius: 0.7rem; /* Modern yuvarlatılmış köşeler */
+    background-color: #ffffff;
+    color: #4b5563;
+    
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.backButton:hover {
+    background-color: #f9fafb;
+    border-color: #1d64f2;
+    color: #1d64f2;
+}
+
+
+.webCompenet{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobilCompenet{
+    display: none;
+}
+
+.errorTitle{
+    font-size: 1.75rem;     
+    font-weight: 750;               
+    margin-bottom: 2rem;    
+    letter-spacing: -0.02em; 
+}
+
+.errorContext{
+    font-size: 1rem;
+}
+
+
+@media (max-width: 767px) {
+    .pageContainer{
+        padding: 1rem;
+    }
+
+    .pageTitle {
+        font-size: 1.25rem;     
+        font-weight: 650;               
+        letter-spacing: -0.02em; 
+    }
+
+    .backButton {
+        padding: 0.2rem 0.4rem;
+        height: 2rem; /* Mobilde biraz daha kompakt */
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .webCompenet{
+        display: none;
+    }
+
+    .mobilCompenet{
+        display: flex;
+    }
+
+    .errorTitle{
+        font-size: 1.25rem;     
+        font-weight: 650;               
+        margin-bottom: 1rem;    
+        letter-spacing: -0.02em; 
+    }
+
+    .errorContext{
+        font-size: 0.9rem;
+
+    }
+    
+}

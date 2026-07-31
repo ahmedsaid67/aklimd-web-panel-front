@@ -1,0 +1,35 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Tablonun yaklaşık yüksekliği kadar bir alan */
+  width: calc(100vw - 18rem);
+  position: fixed;
+  top: 0;
+  left:18rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.4rem solid #e5e7eb; /* Arka plan halkası (açık gri) */
+  border-bottom-color: #1D64F2; /* Dönen renk */
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 1024px) {
+  .loadingContainer {
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}

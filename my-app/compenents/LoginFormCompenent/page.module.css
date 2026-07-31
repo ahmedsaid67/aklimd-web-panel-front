@@ -1,0 +1,81 @@
+.mainContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 400px; /* Daha kontrollü bir genişlik */
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Modern yumuşak gölge */
+    border: 1px solid rgba(29, 100, 242, 0.1); /* Hafif çerçeve */
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.inputContainer {
+    width: 100%;
+}
+
+.inputClass {
+    width: 100%;
+    height: 3rem; /* Biraz daha yüksek ve rahat */
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease; /* Odaklanma animasyonu */
+    background-color: #f8fafc;
+}
+
+.inputClass:focus {
+    border-color: #1D64F2;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(29, 100, 242, 0.1);
+}
+
+.buttonContainer {
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #1D64F2;
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+.buttonContainer:hover {
+    background-color: #1652c8;
+}
+
+.buttonContainer:active {
+    transform: scale(0.98);
+}
+
+.bottomContainer {
+    margin-top: 1.5rem;
+    min-height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.errorText {
+    font-size: 0.85rem;
+    color: #e53e3e; /* Hata için daha geleneksel bir renk */
+    text-align: center;
+    font-weight: 500;
+}

@@ -1,0 +1,69 @@
+.mainContainer{
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.headerContainer {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeContainer{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.kaydetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    background-color: #1D64F2;
+    border-radius: 1rem;
+
+    border: none;
+    outline: none;
+}
+
+.kaydetButton:disabled {
+    background-color: #93B6F8;
+}
+
+.kaydetText{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.inputContainer{
+    border: 0.1rem solid #1D64F2;
+    height: 7rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1D64F2;
+    margin-bottom: 0.5rem;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+
+}

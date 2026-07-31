@@ -1,0 +1,69 @@
+.barContainer{
+    padding: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.08rem solid #d1d5db;
+}
+
+.userContainer{
+    background-color: #1D64F2;
+    padding: 0.5rem 0.7rem ;
+    border-radius: 50%;
+}
+
+.menuContainer{
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.headerMainContainer{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.headerTitle{
+    color: #1D64F2;
+    font-weight: 750;
+    font-size: 1.2rem;
+}
+
+.headerLogo { 
+    width: 2.5rem; 
+    height: auto;
+}
+
+.bodyContainer{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.menuTab{
+    display: flex;   
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 0.08rem solid #d1d5db;
+    gap: 1rem;
+}
+
+.menuText{
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menuText {
+        font-size: 1.1rem;
+    }
+}

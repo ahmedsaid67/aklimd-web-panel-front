@@ -1,0 +1,44 @@
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: rgb(29,29,31);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light; /* Her zaman aydınlık temayı kullan */
+  }
+  body {
+    color: rgb(29, 29, 31); /* Varsayılan aydınlık tema metin rengini uygula */
+    background: #fff; /* Aydınlık tema arka plan rengini uygula */
+  }
+}
+
+@media (min-width: 2048px) {
+  html {
+    font-size: 30px; /* 2K ekranlar için artırılmış font-size */
+  }
+}
