@@ -224,7 +224,7 @@ export default function Page ({hatirlaticilar}){
                     </div>
                 </div>
 
-                <button onClick={()=>router.push('/panel/hatirlaticilar/ekle')} className={styles.ekleButton}>
+                <button onClick={()=>router.push('/panel/hatirlaticilar-ekle')} className={styles.ekleButton}>
                     <Plus size={18} />
                     <span>Hatırlatıcı Ekle</span>
                 </button>

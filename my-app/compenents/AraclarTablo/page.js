@@ -214,8 +214,8 @@ export default function Page ({araclar}){
                         onChange={handleAll}
                     />
                     <div className={styles.titleText}>Araç No</div>
-                    <div className={styles.titleText}>Araç Modeli</div>
                     <div className={styles.titleText}>Araç Markası</div>
+                    <div className={styles.titleText}>Araç Modeli</div>
                     <div className={styles.titleText}>Araç Plakası</div>
                     <div className={styles.titleText}></div>
                 </div>
@@ -231,8 +231,8 @@ export default function Page ({araclar}){
                             onChange={() => handleSelect(item.id)}
                         />
                         <div className={styles.elemanText}>{item.arac_no}</div>
-                        <div className={styles.elemanText}>{item.arac_modeli}</div>
                         <div className={styles.elemanText}>{item.arac_markasi}</div>
+                        <div className={styles.elemanText}>{item.arac_modeli}</div>
                         <div className={styles.elemanText}>{item.arac_plakasi}</div>
                         <div className={styles.editIconContainer}>
                             <Pencil size={16} />

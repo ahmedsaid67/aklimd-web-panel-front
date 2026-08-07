@@ -135,6 +135,18 @@
     z-index: 100;
 }
 
+.dropdownTextContainer{
+    padding: .8rem 1rem;
+    min-height: 10rem;
+}
+
+.dropdownText {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
 .dropdownSearchWrapper {
     display: flex;
     align-items: center;

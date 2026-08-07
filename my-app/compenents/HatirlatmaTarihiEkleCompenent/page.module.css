@@ -15,10 +15,24 @@
     justify-content: space-between;
 }
 
-.closeContainer{
-    padding: 0.5rem;
+
+.closeContainer {
+    background: #ebedf0;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4b5563;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.closeContainer:active {
+    background: #e5e7eb;
 }
 
 .tarihTotelContainer{

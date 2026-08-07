@@ -95,12 +95,7 @@ export default function BottomSheet({ setOptions, id, deleteHandle }) {
                     </div>
                 </div>
 
-                <div className={styles.selectedContainer}>
-                    <Bell size={24} />
-                    <div className={styles.selectedText}>
-                        Araca Ait Hatırlatıcılar
-                    </div>
-                </div>
+
 
                 <div onClick={deleteFunc} className={styles.selectedContainer}>
                     <Trash2 color='#DC2626' size={24} />

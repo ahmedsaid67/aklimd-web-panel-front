@@ -1,0 +1,25 @@
+
+
+.webContainer {
+    display: flex;
+}
+
+.mobileContainer{
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+    .webContainer {
+        display: none; /* Mobilde gizle */
+    }
+
+    .mobileContainer{
+        display: flex;
+    }
+}
+
+

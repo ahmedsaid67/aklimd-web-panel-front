@@ -5,19 +5,17 @@ import { API_ROUTES } from '../../utils/constant';
 import { redirect } from 'next/navigation';
 
 
-export async function hatirlaticiKaydet(formData) {
-    
-    const res = await apiClient(API_ROUTES.HATIRLATICILAR, {
-        method: 'POST',
-        body: JSON.stringify(formData)
-    });
+export const mesajGonder = async (payload) => {
 
-    //console.log('resss:',res)
+    const res = await apiClient(API_ROUTES.ILETISIM, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+    });
 
     if (res.ok) {
         const data =await res.json();
         console.log(data)
-        return { success: true, message: "Hatırlatıcı oluşturma işlemi başarıyla gerçekleştirildi." };
+        return { success: true, message: "Mesajınız başarıyla iletildi." };
     }
 
     if (!res.ok) {
@@ -32,14 +30,16 @@ export async function hatirlaticiKaydet(formData) {
 
             if (contentType && contentType.includes("application/json")) {
 
-                //const errorData = await res.json();
-                //console.log('body var:',errorData)
+                const errorData = await res.json();
+                console.log('body var:', errorData)
 
-                return { success: false, message: "Hatırlatıcı oluşturulamadı." };
+                
+                return { success: false, message: "Mesajınız iletilmedi, daha sonra tekrar deneyiniz." };
             }
 
-            //console.log('body yok: Böyle bir araç bulunmamaktadır.')
+            console.log('body yok: Böyle bir araç bulunmamaktadır.')
 
-            return { success: false, message: "Hatırlatıcı oluşturulamadı." };
+            return { success: false, message: "Mesajınız iletilmedi, daha sonra tekrar deneyiniz." };
     }
+
 }

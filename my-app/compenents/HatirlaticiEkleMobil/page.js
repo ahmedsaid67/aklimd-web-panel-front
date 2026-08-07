@@ -6,7 +6,8 @@ import { useState, useEffect,useRef } from 'react';
 import HatirlaticiTuruSelectCompenent from '../HatirlaticiTuruSelectCompenent/page';
 import AracNoSelectCompenent from '../AracNoSelectCompenent/page'
 import TarihWarningModal from "../TarihWarnings/page";
-import HatirlatmaTarihiEkleCompenent from '../../compenents/HatirlatmaTarihiEkleCompenent/page'
+import HatirlatmaTarihiEkleCompenent from '../../compenents/HatirlatmaTarihiEkleCompenent/page';
+import { hatirlaticiKaydet } from "./actions";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
@@ -14,6 +15,9 @@ import 'dayjs/locale/tr';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
+
+
+
 
 // Eklentileri aktif et (bunu genelde main.js veya dayjs'i konfigüre ettiğiniz yerde bir kez yaparsınız)
 dayjs.extend(utc);
@@ -59,7 +63,7 @@ export default function Page ({araclar}){
 
 
     const [loading,setLoading] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false);
+
     
 
     const handleDataUpdate = (key, value) => {
@@ -82,7 +86,6 @@ export default function Page ({araclar}){
                 return false;
             }
 
-            console.log("value:",value)
 
             const trBugun = dayjs().tz("Europe/Istanbul").startOf('day');
             const trBugunStr = trBugun.format('YYYY-MM-DD');
@@ -140,9 +143,19 @@ export default function Page ({araclar}){
 
     const createHandle = async() => {
         setLoading(true)
-        const response = await AracEkle(data)
-        if(response?.success){
-            setIsModalOpen(true)
+
+        const payload = {
+            arac_id: data.arac.id,
+            hatirlatma_turu: data.hatirlaticiTuru.code,
+            son_tarih: dayjs(data.sonTarih).format('YYYY-MM-DD'),
+            hatirlatma_tarihleri: data.hatirlatmaTarihleri.map(tarih => ({
+                tarih: dayjs(tarih).format('YYYY-MM-DD')
+            }))
+        };
+        
+        const response = await hatirlaticiKaydet(payload)
+        if(response.success){
+            setTarihMessega({"title":"İşlem Başarılı","explanation":response.message});
             setData({
                 arac:null,
                 hatirlaticiTuru:null,

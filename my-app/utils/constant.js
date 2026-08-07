@@ -37,8 +37,12 @@ export const API_ROUTES = {
   HATIRLATICILARIM : '/hatirlaticilar/hatirlaticilarim/',
   ARACA_AIT_HATIRLATICILAR : '/araclar/id/arac-hatirlaticilari/',
   HATIRLATMA_TARIHI_DURDUR : '/hatirlatma-tarihleri-durdur/',
+  HATIRLATMA_TARIHI_DURDUR_WEB : '/hatirlatma-tarihleri-durdur-web/',
   HATIRLATICILAR_PAGINATED: "/hatirlaticilar/hatirlaticilar-web/",
   HATIRLATICILAR_FULL_DELETE : "/hatirlaticilar/hatirlaticilar-full-delete/",
+
+  // hatirlatma tarihleri
+  HATIRLATMA_TARIHI_lIST :'/hatirlatma-tarihleri-list-web/id/', 
 
   // sıgnals token cretae or control
   PUSHY_CRATE_OR_CONTROL : '/pushy-token-create-or-control/',

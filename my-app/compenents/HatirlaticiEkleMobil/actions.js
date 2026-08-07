@@ -5,14 +5,12 @@ import { API_ROUTES } from '../../utils/constant';
 import { redirect } from 'next/navigation';
 
 
-export async function hatirlaticiKaydet(formData) {
-    
+export const hatirlaticiKaydet = async (payload) => {
+
     const res = await apiClient(API_ROUTES.HATIRLATICILAR, {
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
     });
-
-    //console.log('resss:',res)
 
     if (res.ok) {
         const data =await res.json();
@@ -42,4 +40,8 @@ export async function hatirlaticiKaydet(formData) {
 
             return { success: false, message: "Hatırlatıcı oluşturulamadı." };
     }
+
 }
+
+
+// hatırlatıcıdaa bir 400 yanıtımız var yakalamk durumunda oldugumuz oda credı bıttı noktasında. bunun kodunu sonra yazacagız inşallah.

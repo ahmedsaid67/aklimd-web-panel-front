@@ -3,9 +3,8 @@
 import { useEffect } from 'react';
 import styles from './page.module.css';
 import { motion, useAnimation } from 'framer-motion';
-import { Car, Bell, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-
+import Link from 'next/link';
 
 export default function BottomSheet({ setOptions, item, deleteHandle }) {
 
@@ -58,9 +57,6 @@ export default function BottomSheet({ setOptions, item, deleteHandle }) {
 
 
 
-    const deleteFunc = async() => {
-        deleteHandle(item.id)
-    }
 
     return (
         <div
@@ -116,7 +112,7 @@ export default function BottomSheet({ setOptions, item, deleteHandle }) {
                     
                 </div>
 
-                <div className={styles.tarihlerButton}>Hatırlatma Tarihlerini Gör</div>
+                <Link className={styles.tarihlerButton} onClick={() => setOptions(null)} href={`/panel/hatirlaticilar/${item.id}`}>Hatırlatma Tarihlerini Görüntüle</Link>
                 <div className={styles.deleteButton} onClick={()=>deleteHandle(item.id)}>Hatırlatıcıyı Sil</div>
 
             </motion.div>

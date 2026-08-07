@@ -187,9 +187,10 @@ export default function HatirlaticiEkleWeb({araclar}) {
 
 
         const result = await hatirlaticiKaydet(payload);
+        //console.log("result:",result)
         // Sunucudan gelen mesajı modal ile göster
-        setTarihMessega({"title":"İşlem Başarılı","explanation":result.message});
         if (result.success) {
+            setTarihMessega({"title":"İşlem Başarılı","explanation":result.message});
             // Başarılı ise formu sıfırla
             setFormData({
                 arac: null,
@@ -235,37 +236,47 @@ export default function HatirlaticiEkleWeb({araclar}) {
 
                         {open && (
                             <div className={styles.dropdown}>
-                                <div className={styles.dropdownSearchWrapper}>
-                                    <Search className={styles.searchIcon} size={16} strokeWidth={2} />
-                                    <input
-                                        type="text"
-                                        value={searchTerm}
-                                        placeholder="Araç No ile ara..."
-                                        className={styles.dropdownSearchInput}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                        autoFocus
-                                    />
-                                </div>
-                                <div className={styles.dropdownList}>
-                                    {filteredAraclar.length > 0 ? (
-                                        filteredAraclar.map((arac) => (
-                                            <button
-                                                key={arac.id}
-                                                type="button"
-                                                className={`${styles.option} ${formData.arac?.id === arac.id ? styles.optionSelected : ""}`}
-                                                onClick={() => {
-                                                    dataAdd("arac",arac);
-                                                    setOpen(false);
-                                                    setSearchTerm("");
-                                                }}
-                                            >
-                                                <span className={styles.optionTitle}>{arac.arac_no}</span>
-                                            </button>
-                                        ))
-                                    ) : (
-                                        <div className={styles.noResult}>Eşleşen araç bulunamadı</div>
-                                    )}
-                                </div>
+                                {araclar.length===0 ? (
+                                    <div className={styles.dropdownTextContainer}>
+                                        <div className={styles.dropdownText}>
+                                            Araç kaydı bulunmamaktadır. Hatırlatıcı oluşturabilmek için öncelikle sistemimize bir araç kaydetmeniz gerekmektedir.
+                                        </div>
+                                    </div>
+                                ):(
+                                    <>
+                                        <div className={styles.dropdownSearchWrapper}>
+                                            <Search className={styles.searchIcon} size={16} strokeWidth={2} />
+                                            <input
+                                                type="text"
+                                                value={searchTerm}
+                                                placeholder="Araç No ile ara..."
+                                                className={styles.dropdownSearchInput}
+                                                onChange={(e) => setSearchTerm(e.target.value)}
+                                                autoFocus
+                                            />
+                                        </div>
+                                        <div className={styles.dropdownList}>
+                                            {filteredAraclar.length > 0 ? (
+                                                filteredAraclar.map((arac) => (
+                                                    <button
+                                                        key={arac.id}
+                                                        type="button"
+                                                        className={`${styles.option} ${formData.arac?.id === arac.id ? styles.optionSelected : ""}`}
+                                                        onClick={() => {
+                                                            dataAdd("arac",arac);
+                                                            setOpen(false);
+                                                            setSearchTerm("");
+                                                        }}
+                                                    >
+                                                        <span className={styles.optionTitle}>{arac.arac_no}</span>
+                                                    </button>
+                                                ))
+                                            ) : (
+                                                <div className={styles.noResult}>Eşleşen araç bulunamadı</div>
+                                            )}
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         )}
                     </div>

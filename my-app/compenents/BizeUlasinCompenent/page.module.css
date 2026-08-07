@@ -1,0 +1,83 @@
+.bodyContainer {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+}
+
+.sectionContainer {
+    width: 100%;
+}
+
+.headerWrapper {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #f3f4f6;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 0.0625rem solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    resize: vertical;
+    min-height: 12rem;
+    max-height: 25rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+.textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.1);
+}
+
+.submitButton {
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-end;
+}
+
+.submitButton:hover {
+    background-color: #1d4ed8;
+}
+
+/* Mobil Uyum (Responsive) */
+@media (max-width: 767px) {
+    .bodyContainer {
+        padding: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
+}

@@ -1,12 +1,12 @@
 import styles from './page.module.css';
-import HatirlaticiEkleWeb from '../../../../../compenents/HatirlaticiEkleWeb/page';
-import HatirlaticiEkleMobil from '../../../../../compenents/HatirlaticiEkleMobil/page'
+import HatirlaticiEkleWeb from '../../../../compenents/HatirlaticiEkleWeb/page';
+import HatirlaticiEkleMobil from '../../../../compenents/HatirlaticiEkleMobil/page'
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react'; // İkonu import et
-import { API_ROUTES } from '../../../../../utils/constant';
-import { apiClient } from '../../../../../lib/api-client';
+import { API_ROUTES } from '../../../../utils/constant';
+import { apiClient } from '../../../../lib/api-client';
 import { redirect } from 'next/navigation';
-import Loading from '../../../../../compenents/LoadingPanelCompenent/page';
+import Loading from '../../../../compenents/LoadingPanelCompenent/page';
 import { Suspense } from 'react';
 
 async function getAraclar(){
