@@ -1,47 +1,78 @@
 .mainContainer {
     flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .formContainer {
     width: 100%;
-    max-width: 400px; /* Daha kontrollü bir genişlik */
-    background-color: #fff;
-    border-radius: 1.25rem;
-    padding: 2.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Modern yumuşak gölge */
-    border: 1px solid rgba(29, 100, 242, 0.1); /* Hafif çerçeve */
+    max-width: 28rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2.25rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 1px 1px rgba(0, 0, 0, 0.02);
+    border: 0.08rem solid rgba(226, 232, 240, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.titleSection {
+    margin-bottom: 1.25rem;
+}
+
+.formTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
 }
 
 .headerContainer {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
 }
 
 .inputContainer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.inputLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
 }
 
 .inputClass {
     width: 100%;
-    height: 3rem; /* Biraz daha yüksek ve rahat */
+    height: 2.75rem;
     outline: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 0 1rem;
-    border: 1px solid #e2e8f0;
+    border: 0.08rem solid #cbd5e1;
     border-radius: 0.75rem;
-    transition: all 0.3s ease; /* Odaklanma animasyonu */
-    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.inputClass::placeholder {
+    color: #94a3b8;
 }
 
 .inputClass:focus {
     border-color: #1D64F2;
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgba(29, 100, 242, 0.1);
+    box-shadow: 0 0 0 3px rgba(29, 100, 242, 0.12);
 }
 
 .buttonContainer {
@@ -55,11 +86,15 @@
     border-radius: 0.75rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    margin-top: 0.5rem;
 }
 
+.buttonContainer:disabled {
+    background-color: #1D64F2;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 .buttonContainer:hover {
-    background-color: #1652c8;
+    background-color: #1551c9;
 }
 
 .buttonContainer:active {
@@ -67,15 +102,37 @@
 }
 
 .bottomContainer {
-    margin-top: 1.5rem;
-    min-height: 2rem;
+    width: 100%;
+    /* Sabit alan: 3 hata satırı sığacak kadar veya ihtiyacına göre */
+    height: 3.5rem; 
+    margin-top: 1rem;
+    flex-shrink: 0;
+    /* Eğer hiçbir hata yoksa bile bu div yer kaplasın diye */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.errorBox {
+    background-color: #fef2f2;
+    border: 0.08rem solid #fecaca;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem; /* Padding'i biraz kıstık */
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+
+.errorList {
+    list-style-type: disc;
+    padding-left: 1rem;
+    margin: 0;
 }
 
 .errorText {
-    font-size: 0.85rem;
-    color: #e53e3e; /* Hata için daha geleneksel bir renk */
-    text-align: center;
+    font-size: 0.7rem; /* Fontu biraz küçülttük */
+    color: #b91c1c;
     font-weight: 500;
+    line-height: 1.1;
 }

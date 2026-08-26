@@ -1,0 +1,158 @@
+.pageWrapper {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+    min-height: 100vh;
+}
+
+.mainContainer {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.leftContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rightContainer {
+    flex: 1;
+}
+
+/* Ortak Kart Tasarımı */
+.card, .summaryCard {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+    padding: 1.5rem;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cardHeader h3, .summaryCard h3, .card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.editButton {
+    background: none;
+    border: none;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.warningBox {
+    background-color: #fef9c3;
+    border: 0.08rem solid #fde047;
+    color: #854d0e;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.warningBox span {
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Ödeme Yöntemi Sekmeleri */
+.tabContainer {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    border-bottom: 0.08rem solid #e2e8f0;
+    padding-bottom: 0.75rem;
+}
+
+.tabButton {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 0.08rem solid #cbd5e1;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tabButton.active {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+}
+
+.noCardText {
+    text-align: center;
+    color: #94a3b8;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.addCardButton {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.08rem dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #0f172a;
+    cursor: pointer;
+}
+
+/* Sağ Sepet / Özet Alanı */
+.summaryRow, .totalRow {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75em 0;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+.totalRow {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.divider {
+    border: none;
+    border-top: 0.08rem solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.agreementContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.1rem 0;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.agreementContainer span {
+    color: #2563eb;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.completeButton {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #94a3b8; /* Normalde disabled iken gri, aktifken koyu renk */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}

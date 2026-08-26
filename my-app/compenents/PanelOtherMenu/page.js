@@ -16,6 +16,7 @@ export default function Page() {
         { name: "Paketler", icon: <CreditCard size={20} />, link: "/panel/paketler" },
         { name: "Kullanım Klavuzu", icon: <BookOpen size={20} />, link: "/panel/kullanim-klavuzu" },
         { name: "Sıkça Sorulan Sorular", icon: <HelpCircle size={20} />, link: "/panel/sikca-sorulan-sorular" },
+        { name: "Bize Ulaşın", icon:<Mail size={20} />, link: "/panel/bize-ulasin" },
     ];
 
     return (
@@ -26,9 +27,9 @@ export default function Page() {
                     <div onClick={() => setIsMenuOpen(true)}>
                         <Menu size={24} />
                     </div>
-                    <div className={styles.userContainer}>
+                    <Link href="/panel/hesap-bilgileri" className={styles.userContainer}>
                         <User color='#fff' size={24} />
-                    </div>
+                    </Link>
                 </div>
             )}
 

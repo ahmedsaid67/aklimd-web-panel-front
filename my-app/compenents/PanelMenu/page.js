@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'; // URL'i takip etmek için
 import styles from './page.module.css';
 import { 
   Home, LayoutGrid, Bell, CreditCard, BookOpen, 
-  HelpCircle, Mail
+  HelpCircle, Mail, UserCog
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -18,6 +18,7 @@ export default function Page() {
     { name: "Kullanım Klavuzu", icon: <BookOpen size={20} />, link: "/panel/kullanim-klavuzu" },
     { name: "Sıkça Sorulan Sorular", icon: <HelpCircle size={20} />, link: "/panel/sikca-sorulan-sorular" },
     { name: "Bize Ulaşın", icon: <Mail size={20} />, link: "/panel/bize-ulasin" },
+    { name: "Hesap Bilgileri", icon: <UserCog size={20} />, link: "/panel/hesap-bilgileri" },
   ];
 
   return (

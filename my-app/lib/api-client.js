@@ -42,7 +42,7 @@ export async function apiClient(endpoint, options = {}) {
     if (cookieStore.has('accessToken')) {
       cookieStore.delete('accessToken');
     }
-    redirect('/login');
+    redirect('/giris-yap');
   }
 
   return response;

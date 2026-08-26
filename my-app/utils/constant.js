@@ -10,8 +10,21 @@ export const API_ROUTES = {
   USER_DETAIL : "/users/id/",
   UPDATE_CREDIT : '/users/id/update-credit/',
   GET_PROFIL:'/users/profile/',
+  GET_KULLANIM_OZETI:'/users/kullanim-ozeti/',
   RESET_PASSWORD_CODE : '/password-reset/request-reset/' ,
   RESET_PASSWORD : '/password-reset/reset-password/' ,
+  
+
+  // billing profile
+  BILLING_PROFILE : "/billing-profile/",
+  BILLING_PROFILE_ME : "/billing-profile/me/",
+
+  // paketler
+  PACKAGES :"/packages/",
+
+  // odeme sayfası ozel endpoınt
+  PAYMENT_PAGE_VIEW : "/payment/id/page-view/",
+
 
   // iletişim
   ILETISIM : '/iletisim/',

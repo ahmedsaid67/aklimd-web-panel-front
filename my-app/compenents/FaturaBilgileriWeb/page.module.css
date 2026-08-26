@@ -1,0 +1,451 @@
+.profileWrapper {
+  margin-top: 2rem;
+}
+
+/* Form Tasarımı */
+.formSection {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #f3f4f6;
+}
+
+.formTitle {
+    font-size: 1.1rem;
+}
+
+.formExplanation {
+    font-size: 1rem;
+}
+
+/* Kolonlu Satır Yapısı */
+.inputRow {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.25rem;
+  flex: 1;
+  position: relative; /* Dropdown ve ikonların doğru konumlanması için şart */
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4B5563;
+  margin-bottom: 0.75rem;
+}
+
+.input {
+    width: 100%;
+    height: 2.8rem;
+    padding: 0 1rem;
+    border: 0.08rem solid #d1d5db;
+    border-radius: 0.7rem;
+    font-size: 0.95rem;
+    background-color: #fff;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
+
+.input:focus {
+    border-color: #1D64F2;
+    box-shadow: 0 0 0 0.2rem rgba(29, 100, 242, 0.15);
+}
+
+
+.disabled {
+  background-color: #f8fafc;
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+  color: #64748b;
+}
+
+.disabled:read-only:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #d1d5db;; /* Mevcut border rengini korur */
+}
+
+
+/* Şehir Dropdown Konteyner ve İkon Sınıfları (Eksik Olanlar) */
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inputContainer input {
+  cursor: pointer;
+}
+
+.inputIconContainer {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: #9ca3af;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Stilleri */
+.dropdown {
+    position: absolute;
+    top: calc(100% + .45rem);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 0.1rem solid #e5e7eb;
+    border-radius: .5rem;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdownSearchWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0.75rem;
+    height: 2.625rem;
+    padding: 0 0.875rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+.dropdownSearchWrapper:focus-within {
+    border-color: #1D64F2;
+}
+
+.searchIcon {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+.dropdownSearchInput {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.dropdownSearchInput::placeholder {
+    color: #9ca3af;
+}
+
+.dropdownList {
+    max-height: 20rem;
+    min-height: 10rem;
+    overflow-y: auto;
+}
+
+.dropdownList::-webkit-scrollbar {
+    width: .35rem;
+}
+
+.dropdownList::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 999px;
+}
+
+.dropdownList::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: .8rem 1rem;
+    border: none;
+    outline: none;
+    background: #fff;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.option:hover {
+    background: #f3f4f6;
+}
+
+.option:focus {
+    background: #eef4ff;
+}
+
+.optionTitle {
+    font-size: .9rem;
+    color: rgb(29,29,31);
+    text-align: left;
+}
+
+.optionSelected {
+    background: #eef4ff;
+}
+
+.optionSelected .optionTitle {
+    color: #1D64F2;
+}
+
+.noResult {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Telefon Giriş Stilleri */
+.phoneInputWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.8rem; /* Diğer inputlarla tam eşitlendi */
+    border: 0.08rem solid #cbd5e1;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.phoneInputWrapper:focus-within {
+    border-color: #1D64F2;
+    box-shadow: 0 0 0 3px rgba(29, 100, 242, 0.12);
+}
+
+.phonePrefix {
+    padding: 0 0.75rem 0 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.phoneInputClass {
+    flex: 1;
+    height: 100%;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.phoneInputClass::placeholder {
+    color: #94a3b8;
+}
+
+/* Kullanıcı Türü Seçici */
+.typeSelector {
+  display: flex;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.25rem;
+  border: 0.08rem solid #cbd5e1;
+  border-radius: 0.5rem;
+  height: 2.8rem;
+  box-sizing: border-box;
+}
+
+.typeOption {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.typeOption svg {
+  stroke: #64748b;
+  transition: stroke 0.2s ease;
+}
+
+.activeType {
+  background: #1D64F2;
+  color: #ffffff;
+  box-shadow: 0 0.125rem 0.25rem rgba(29, 100, 242, 0.2);
+}
+
+.activeType svg {
+  stroke: #ffffff;
+}
+
+/* Kaydet Butonu */
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.625rem;
+}
+
+.saveButton {
+  background: #1D64F2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.saveButton:disabled {
+    background-color: #1D64F2 !important;
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+}
+
+.saveButton:hover {
+  background: #1551c9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inputRow {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+    .profileWrapper {
+        margin-top: 1rem;
+    }
+
+    .formSection {
+        padding: 1rem;
+        border-radius: 0.75rem;
+        /* background ve border'a dokunmadık, orijinal stilleri kalıyor */
+    }
+
+    .headerContainer {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        gap: 0.35rem;
+    }
+
+    .formTitle {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .formExplanation {
+        font-size: 0.9rem;
+        color: #4b5563;
+        line-height: 1.4;
+    }
+
+    .inputRow {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .inputGroup {
+        margin-bottom: 1rem;
+    }
+
+    .inputGroup label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .input {
+        height: 2.6rem;
+        font-size: 0.9rem;
+        padding: 0 0.85rem;
+        border-radius: 0.6rem;
+    }
+
+    .phoneInputWrapper {
+        height: 2.6rem;
+        border-radius: 0.6rem;
+    }
+
+    .phonePrefix {
+        padding: 0 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .phoneInputClass {
+        font-size: 0.9rem;
+        padding: 0 0.85rem;
+    }
+
+    .statsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    /* Şehir Dropdown Yapısı (Kullanıcı Bilgileri Mobil Standartlarına Uyarlandı) */
+    .dropdown {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 400px;
+        max-height: 70vh;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 0.75rem;
+        z-index: 1000;
+        font-size: 0.9rem;
+    }
+
+    .dropdownList {
+        max-height: 50vh;
+        font-size: 0.9rem;
+    }
+
+    .buttonContainer {
+        margin-top: 0.5rem;
+        justify-content: stretch;
+    }
+
+    .saveButton {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 0.6rem;
+    }
+}

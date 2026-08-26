@@ -1,0 +1,107 @@
+/* Ortak Modal Katmanları */
+.overlay {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(4px); z-index: 1000;
+}
+
+.modal {
+    background: white; padding: 2rem; border-radius: 1.5rem;
+    width: 30rem; height: 20rem; /* SABİT BOYUT */
+    display: flex; flex-direction: column; justify-content: center;
+    align-items: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.content { 
+    width: 100%; display: flex; flex-direction: column; 
+    align-items: center; gap: 1.25rem; 
+}
+
+/* Metinler ve Başlıklar */
+.title { font-size: 1.5rem; color: #111827; margin: 0; }
+.desc { color: #6b7280; margin: 0; line-height: 1.5; padding: 0 1rem; }
+
+/* Butonlar */
+.buttonContainer { display: flex; gap: 1rem; width: 100%; margin-top: 1rem; }
+
+.btnCancel, .btnDelete, .buttonClose {
+    padding: 0.8rem 1rem; border-radius: 0.75rem; border: none;
+    font-weight: 600; cursor: pointer; transition: 0.2s; flex: 1;
+}
+
+.btnCancel { background: #f3f4f6; color: #374151; }
+.btnCancel:hover { background: #e5e7eb; }
+
+.btnDelete { background: #DC2626; color: white; }
+.btnDelete:hover { background: #b91c1c; }
+
+.buttonClose { background: #1D64F2; color: white; width: 100%; }
+.buttonClose:hover { background: #1858d6; }
+
+/* Özel İkonlar ve Animasyonlar */
+.resultIcon { 
+    font-size: 3rem; color: #10B981; 
+    background: #ecfdf5; border-radius: 50%; padding: 0.5rem; 
+}
+
+.warningIcon {
+    width: 4rem; height: 4rem; background: #FEF3C7;
+    color: #D97706; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
+}
+
+/* Uyarı sınıfının birebir ölçü ve yerleşim standardında başarılı (yeşil) versiyonu */
+.successIcon {
+    width: 4rem; height: 4rem; background: #D1FAE5;
+    color: #059669; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
+}
+
+.spinner {
+    width: 50px; height: 50px; border: 5px solid #f3f3f3;
+    border-top: 5px solid #1D64F2; border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+        max-width: 22rem;
+        height: auto;
+        min-height: 16rem;
+        padding: 1.5rem;
+    }
+
+    .content {
+        gap: 1rem;
+    }
+
+    .warningIcon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        font-size: 0.95rem;
+        padding: 0;
+    }
+
+    .buttonClose,
+    .btnCancel,
+    .btnDelete {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+}

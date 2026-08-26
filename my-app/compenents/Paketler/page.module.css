@@ -1,0 +1,204 @@
+.packagesWrapper {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #f3f4f6;
+}
+
+.formTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.formExplanation {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+/* Paketler Grid Düzeni */
+.packagesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Paket Kartı */
+.packageCard {
+    background: #f9fafb;
+    border: 0.08rem solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.packageCard:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Öne Çıkan / Avantajlı Kart Stili */
+.featuredCard {
+    border-color: #93c5fd !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(29, 100, 242, 0.06);
+}
+
+.packageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.iconBox {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #eff6ff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+}
+
+.packageIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* Avantajlı Etiketi (Badge) */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #eff6ff;
+    color: #1d64f2;
+    padding: 0.3rem 0.65rem;
+    border-radius: 2rem;
+    border: 0.08rem solid #dbeafe;
+}
+
+.badgeIcon {
+    width: 0.85rem;
+    height: 0.85rem;
+}
+
+.packageInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.packageTitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.packageDescription {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    border-top: 0.08rem solid #e5e7eb;
+}
+
+.priceValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.02em;
+}
+
+.taxLabel {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+/* Satın Al Butonu */
+.buyButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #1D64F2;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.buyButton:hover {
+    background: #1551c9;
+}
+
+.buttonIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Mobil Uyum */
+@media (max-width: 767px) {
+    .packagesWrapper {
+        padding: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .headerContainer {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        gap: 0.35rem;
+    }
+
+    .formTitle {
+        font-size: 1rem;
+    }
+
+    .formExplanation {
+        font-size: 0.9rem;
+    }
+
+    .packagesGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .packageCard {
+        padding: 1.25rem;
+        border-radius: 0.6rem;
+    }
+
+    .buyButton {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 0.6rem;
+    }
+}

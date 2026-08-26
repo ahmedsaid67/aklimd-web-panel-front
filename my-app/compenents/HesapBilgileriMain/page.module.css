@@ -1,0 +1,130 @@
+.mainContainer {
+    width: 100%;
+}
+
+.tabContainer {
+    background: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    border: 0.08rem solid #d1d5db;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    text-decoration: none; /* Link alt çizgisini kaldırır */
+}
+
+.tab:hover {
+     background-color: #F3F4F6;;
+    color: #111827;
+}
+
+.activeTab {
+    background-color: #1d64f2;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(29, 100, 242, 0.25);
+}
+
+.activeTab:hover {
+    background-color: #1852c6;
+    color: #ffffff;
+}
+
+.tabIcon {
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .mainContainer {
+        width: 100%;
+        padding: 0; /* mainContainer padding'i kaldırıldı */
+    }
+
+    .tabContainer {
+        background: #ffffff;
+        padding: 0 0.25rem;
+        border-radius: 0.5rem; /* Köşeli veya düz bir yapı için sıfırlayabiliriz */
+        border: none; /* Dıştaki kutu border'ını kaldırdık */
+        border-bottom: 2px solid #e5e7eb; /* Tüm sepetin altında genel ince bir çizgi tabanı */
+        display: flex;
+        gap: 0.5rem;
+        
+        /* Alan aşarsa akıcı yatay kaydırma */
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .tabContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 0.5rem;
+        cursor: pointer;
+        color: #4b5563;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        text-decoration: none;
+        flex-shrink: 0;
+        position: relative; /* Alt çizginin konumu için gerekli */
+        border: none;
+    }
+
+    .tab:hover {
+        color: #111827;
+        background-color: transparent;
+    }
+
+    /* Mobilde ikonları tamamen kaldırıyoruz */
+    .tabIcon {
+        display: none !important;
+    }
+
+    .tabText {
+        font-size: 0.85rem;
+    }
+
+    /* Aktif sekme stili */
+    .activeTab {
+        background-color: transparent;
+        color: #1d64f2;
+        font-weight: 600;
+        box-shadow: none;
+    }
+
+    /* Tüm tabContainer alt çizgisinin üzerinde aktif olanı belli eden özel alt çizgi */
+    .activeTab::after {
+        content: '';
+        position: absolute;
+        bottom: -2px; /* tabContainer'ın alt çizgisinin tam üzerine oturması için */
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #1d64f2;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .activeTab:hover {
+        background-color: transparent;
+        color: #1852c6;
+    }
+}
