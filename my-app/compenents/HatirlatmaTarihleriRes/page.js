@@ -6,8 +6,10 @@ export default function HatirlatmaTarihleriRes({ setTarihMessega,tarihMessega })
         <div className={styles.overlay} onClick={() => setTarihMessega(null)}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.content}>
-                    {/* Uyarı ikonu - İstersen bir SVG icon da koyabilirsin */}
-                    <div className={styles.warningIcon}>!</div>
+
+                    <div className={tarihMessega.title ==="İşlem başarılı" ? styles.successIcon : styles.warningIcon}>
+                        {tarihMessega.title ==="İşlem başarılı" ? "✓" : "!"}
+                    </div>
                     
                     <h2 className={styles.title}>{tarihMessega.title}</h2>
                     <p className={styles.desc}>

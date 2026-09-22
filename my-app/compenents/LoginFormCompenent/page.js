@@ -5,7 +5,7 @@ import { loginAction } from './actions';
 import SuccessRes from '../SuccessRes/page';
 import ErrorRes from '../ErrorRes/page';
 import { useRouter } from 'next/navigation';
-
+import Link from 'next/link';
 
 export default function Page(){
 
@@ -116,6 +116,14 @@ export default function Page(){
                     </div>
                 </div>
                 <button type="button" onClick={nextHandle} disabled={errors.length>0 || loading}  className={styles.buttonContainer}>Giriş Yap</button>
+                <div className={styles.authLinks}>
+                    <Link href="/sifremi-unuttum">Şifremi unuttum</Link>
+
+                    <div className={styles.registerLink}>
+                        <div>Hesabınız yok mu?</div>
+                        <Link href="/kayit-ol">Kayıt ol.</Link>
+                    </div>
+                </div>
                 <div className={styles.bottomContainer}>
                     {errors.length > 0 && (
                         <div className={styles.errorBox}>

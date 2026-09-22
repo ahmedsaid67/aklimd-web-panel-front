@@ -80,28 +80,16 @@ async function PaketWrapper({ id }) {
   }
   
   return (
-    <>
-        <div className={styles.otherContainer}>
-                <div className={styles.headerContainer}>
-                    <div className={styles.pageTitle}>Ödeme Ekranı</div>
-                    <Link href="/panel/paketler" className={styles.backButton}>
-                        <ArrowLeft size={18} />
-                        <div>Paketlere Dön</div>
-                    </Link>
-                </div>
-                <PaketWeb paket={paket} />
-        </div>
-        {/* <div className={styles.mobileContainer}>
+        <div>
             <div className={styles.headerContainer}>
-                <div className={styles.pageTitle}>Paket Detayı</div>
-                <Link href="/panel/araclar" className={styles.backButton}>
+                <div className={styles.pageTitle}>Ödeme Ekranı</div>
+                <Link href="/panel/paketler" className={styles.backButton}>
                     <ArrowLeft size={18} />
                     <div>Paketlere Dön</div>
                 </Link>
             </div>
-            <AracDetayMobil arac={arac} />
-        </div> */}
-    </>
+            <PaketWeb paket={paket} />
+        </div>
   )
 }
 

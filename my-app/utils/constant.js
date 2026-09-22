@@ -25,6 +25,14 @@ export const API_ROUTES = {
   // odeme sayfası ozel endpoınt
   PAYMENT_PAGE_VIEW : "/payment/id/page-view/",
 
+  // odeme-başlat
+
+  ODEME_BASLAT : "/odeme/baslat/id/",
+
+  // faturalar
+  INVOICES : "/invoices/",
+  INVOICE_DOWNLOAD : "/invoices/id/download/",
+
 
   // iletişim
   ILETISIM : '/iletisim/',

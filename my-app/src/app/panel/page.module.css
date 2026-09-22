@@ -11,7 +11,7 @@ background-color: #ebf3fe;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     border-right: 1px solid #f3f4f6; /* Sağ tarafa hafif bir sınır ekledik */
 }
 
@@ -23,6 +23,32 @@ background-color: #ebf3fe;
 .contextContainer{
     margin-left: 18rem;
     min-height: 150vh;
+}
+
+
+
+
+.pageContainer{
+    padding:  2rem;
+}
+
+.pageTitle {
+    font-size: 1.75rem;     
+    font-weight: 750;               
+    margin-bottom: 2rem;    
+    letter-spacing: -0.02em; 
+}
+
+
+.errorTitle{
+    font-size: 1.75rem;     
+    font-weight: 750;               
+    margin-bottom: 2rem;    
+    letter-spacing: -0.02em; 
+}
+
+.errorContext{
+    font-size: 1rem;
 }
 
 
@@ -42,6 +68,31 @@ background-color: #ebf3fe;
         flex-direction: column;
         width: 100%;
     }
+
+
+    .pageContainer{
+        padding: 1rem;
+    }
+
+    .pageTitle {
+        font-size: 1.25rem;     
+        font-weight: 650;               
+        margin-bottom: 2rem;    
+        letter-spacing: -0.02em; 
+    }
+
+    .errorTitle{
+        font-size: 1.25rem;     
+        font-weight: 650;               
+        margin-bottom: 1rem;    
+        letter-spacing: -0.02em; 
+    }
+
+    .errorContext{
+        font-size: 0.9rem;
+
+    }
+
 }
 
 

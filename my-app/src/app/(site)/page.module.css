@@ -1,0 +1,574 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- Hero Bölümü Stilleri --- */
+.heroSection {
+  background-color: #ebf3fe;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.heroContainer {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primaryButton {
+  background-color: #1D64F2;
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: #1752cd;
+}
+
+/* Buton içindeki Lucide ok ikonu */
+.buttonArrowIcon {
+  width: 1rem; 
+  height: 1rem;
+}
+
+.secondaryButton {
+  background-color: #ffffff;
+  color: #1D64F2;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0.08rem solid #1D64F2;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: #f0f5ff;
+}
+
+
+
+/* --- Özellikler (Ne İşe Yarar) Bölümü Stilleri --- */
+.featuresSection {
+  padding: 6rem 1.5rem;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.headerWrapper {
+  text-align: center;
+  max-width: 50rem;
+  margin: 0 auto 4rem auto;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #ebf3fe;
+  color: #1D64F2;
+  letter-spacing: 0.08rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.415rem 0.85rem;
+  border-radius: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.mainTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.subDescription {
+  font-size: 1.125rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* 2x2 Grid Düzeni */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #F9FAFB;
+  border: 0.08rem solid #E5E7EB;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.card:hover {
+  border-color: #1D64F2;
+}
+
+.iconBox {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ebf3fe;
+  color: #1D64F2;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.cardIcon {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+
+/* --- Nasıl Çalışır (4 Adım) Bölümü Stilleri --- */
+.stepsSection {
+  padding: 6rem 1.5rem;
+  background-color: #f9fafb;
+  width: 100%;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.stepCard {
+  background-color: #ffffff;
+  border: 0.08rem solid #E5E7EB;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepCard:hover {
+  border-color: #1D64F2;
+}
+
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.stepNumber {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1D64F2;
+}
+
+.stepArrowIcon {
+  width: 1.25rem; 
+  height: 1.25rem;
+  color: #9CA3AF;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.stepText {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* --- Koyu Renkli CTA Banner Stilleri --- */
+.ctaBannerSection {
+  background-color: #ebf3fe;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.ctaContainer {
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 45rem;
+}
+
+
+
+.ctaButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ctaPrimaryButton {
+  background-color: #1D64F2;
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctaPrimaryButton:hover {
+  background-color: #1752cd;
+}
+
+
+
+/* --- Footer Stilleri --- */
+.footer {
+  background-color: #1D64F2;
+  color: #ffffff;
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  width: 100%;
+}
+
+.footerContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 0.08rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLogo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footerBottom {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footerLegalList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.footerLegalLink {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footerLegalLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.mainContent {
+  padding-top: 4.5rem;
+}
+
+@media (max-width: 767px) {
+  .mainContent {
+    padding-top: 3.75rem;
+  }
+}
+
+/* --- Mobil Responsive Uyumluluk --- */
+@media (max-width: 1024px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSection,
+  .featuresSection,
+  .stepsSection,
+  .ctaBannerSection {
+    padding: 2.5rem 1rem; /* Mobilde dikey ferahlık optimuma getirildi */
+  }
+
+  .heroContainer,
+  .ctaContainer {
+    width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .heroTitle {
+    font-size: 1.85rem; 
+    line-height: 1.25;
+  }
+
+  /* --- Header / Başlık Alanları İçin Mobil Ayarlar --- */
+  .headerWrapper {
+    margin: 0 auto 2rem auto; 
+    padding: 0 0.5rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mainTitle,
+  .ctaTitle {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .heroDescription,
+  .ctaDescription,
+  .subDescription {
+    font-size: 0.9rem;
+  }
+  /* ------------------------------------------------ */
+
+  /* --- Butonlar İçin Mobil Ayarlar (Hero ve Alt CTA Ortak) --- */
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem; 
+  }
+
+  .ctaButtonWrapper {
+    width: 100%; 
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .ctaPrimaryButton {
+    width: 100%;
+    padding: 0.85rem 1.25rem; 
+    font-size: 0.95rem;
+    justify-content: center; 
+  }
+
+  .buttonArrowIcon {
+    width: 0.95rem; 
+    height: 0.95rem;
+  }
+  /* --------------------------------------------------------- */
+
+  .gridContainer,
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Kartlar ve Adımlar İçin Mobil Ayarlar --- */
+  .card,
+  .stepCard {
+    padding: 1.25rem;
+  }
+
+  .stepHeader {
+    margin-bottom: 0.75rem;
+  }
+
+  .stepNumber {
+    font-size: 1.5rem;
+  }
+
+  .stepArrowIcon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .cardTitle,
+  .stepTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardText,
+  .stepText {
+    font-size: 0.85rem;
+  }
+
+  .iconBox {
+    width: 2.5rem;  
+    height: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cardIcon {
+    width: 1.25rem; 
+    height: 1.25rem;
+  }
+  /* ---------------------------------- */
+
+  /* --- Footer İçin Mobil Tasarım (Görseldeki Gibi Ortalı ve Yan Yana) --- */
+  .footer {
+    padding: 3rem 1rem 2rem 1rem;
+    text-align: center; /* Genel olarak her şeyi ortalıyoruz */
+  }
+
+  .footerContainer {
+    flex-direction: column;
+    align-items: center; /* Ortaya hizalandı */
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footerBrand {
+    width: 100%;
+    align-items: center; /* Logo ve açıklama ortalandı */
+  }
+
+  .footerText {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Görseldeki gibi linklerin yan yana ve sığmadığı yerde alt alta kayması için */
+  .footerLinks {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem; /* Yatay ve dikey boşluklar */
+    width: 100%;
+  }
+
+  .footerLink {
+    font-size: 0.9rem;
+  }
+
+  .footerBottom {
+    padding-top: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footerLegalList {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem; /* Yasal metinler de yan yana ve düzenli dağılır */
+    margin-bottom: 1.25rem;
+  }
+
+  .footerLegalLink {
+    font-size: 0.8rem;
+  }
+
+}

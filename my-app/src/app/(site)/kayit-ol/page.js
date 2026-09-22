@@ -1,10 +1,10 @@
 import styles from './page.module.css';
-import LoginFormCompenent from '../../../compenents/LoginFormCompenent/page'
+import RegisterFormCompenent from '../../../../compenents/RegisterFormCompenent/page'
 
 export default function Page (){
     return(
         <div className={styles.pageContainer}>
-            <LoginFormCompenent/>
+            <RegisterFormCompenent/>
         </div>
     )
 }

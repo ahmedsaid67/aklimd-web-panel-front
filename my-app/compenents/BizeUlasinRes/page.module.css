@@ -52,6 +52,13 @@
     font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
 }
 
+.successIcon {
+    width: 4rem; height: 4rem; background: #D1FAE5;
+    color: #059669; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
+}
+
 .spinner {
     width: 50px; height: 50px; border: 5px solid #f3f3f3;
     border-top: 5px solid #1D64F2; border-radius: 50%;
@@ -75,6 +82,13 @@
     }
 
     .warningIcon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .successIcon {
         width: 3.2rem;
         height: 3.2rem;
         font-size: 1.6rem;

@@ -1,0 +1,199 @@
+.tableContainer {
+    width: 100%;
+}
+
+.mainContainer {
+    width: 100%;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    background-color: #ffff;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    border: 0.08rem solid #d1d5db;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.infoContentWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.infoText {
+    font-size: 0.8rem;
+    color: #4b5563;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+/* Kapalıyken sadece 2 satır gösterip sonunu ... yapar */
+.infoTextTruncated {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Sadece 2 satır göster */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem;
+    flex-shrink: 0;
+}
+
+
+.elemanContainer {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.08rem solid #d1d5db;
+    cursor: pointer;
+}
+
+.elemanLeft {
+    max-width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.elemanTextPrimary {
+    font-size: 0.9rem;
+    color: rgb(29, 29, 31);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.elemanTextSecondary {
+    font-size: 0.85rem;
+    color: #4B5563;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.statusSeparator {
+    color: #9ca3af;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.success {
+    background-color: #DEF7EC;
+    color: #03543F;
+}
+
+.pending {
+    background-color: #FEF08A;
+    color: #713F12;
+}
+
+.elemanRight {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #d1d5db;
+    color: rgb(29, 29, 31);
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bottomBarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0; 
+}
+
+.bottomBarText {
+    font-size: 0.9rem;
+    color: #4B5563;
+}
+
+.bottomButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pageButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #d1d5db;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.activeButton {
+    background-color: #1D64F2;
+    color: #fff;
+}
+
+.leftButton, .rightButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #d1d5db;
+    color: rgb(29,29,31);
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.disabledButton {
+    background-color: #dcdde1;
+    color: #9CA3AF;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #666;
+    border-radius: 0.5rem;
+    user-select: none;
+    background-color: #d1d5db;
+}

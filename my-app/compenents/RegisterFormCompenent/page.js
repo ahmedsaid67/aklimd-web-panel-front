@@ -6,6 +6,7 @@ import { registerAction } from './action';
 import { useRouter } from 'next/navigation';
 import SuccessRes from '../SuccessRes/page';
 import ErrorRes from '../ErrorRes/page';
+import Link from 'next/link';
 
 export default function Page() {
     const [step, setStep] = useState(1);
@@ -15,25 +16,25 @@ export default function Page() {
         phone: ''
     });
 
+    // Yasal onay kontrolü için ayrı ve temiz bir state
+    const [isLegalChecked, setIsLegalChecked] = useState(false);
+
     const [errors, setErrors] = useState([]);
-    const [successRed,setSuccessRed] = useState(null)
-    const [errorRes,setErrorRes] = useState(null)
+    const [successRed, setSuccessRed] = useState(null);
+    const [errorRes, setErrorRes] = useState(null);
     const router = useRouter();
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        // Değişen input'a ait hatayı diziden çıkarıyoruz
         setErrors(prev => prev.filter(err => err.type !== name));
-
     };
 
     const kayitOl = async () => {
-        // Hata varsa işlem yapma
         if (errors.length > 0) return;
 
-        setLoading(true)
+        setLoading(true);
 
         const lastData = {
             first_name: formData.firstName,
@@ -44,33 +45,30 @@ export default function Page() {
             phone_number: "+90" + formData.phone
         };
 
-        //console.log("lastData:",lastData)
-
         const response = await registerAction(lastData);
-        //console.log("response:", response);
 
-
-        if (response.success){
-            setSuccessRed(response.message )
+        if (response.success) {
+            setSuccessRed(response.message);
             setTimeout(() => {
                 router.replace('/panel');
             }, 2000);
         }
 
-        if (!response.success){
-            if(response.messageType==="general"){
-                setErrorRes(response.message)
+        if (!response.success) {
+            if (response.messageType === "general") {
+                setErrorRes(response.message);
                 setFormData({
                     firstName: '', lastName: '', email: '', password: '',
-                    userType: 'bireysel',
+                    userType: 'individual',
                     phone: ''
-                })
-                setStep(1)
-            }else{
-                setErrors([{ type: response.messageType, step: response.step, info: response.message }])
+                });
+                setIsLegalChecked(false);
+                setStep(1);
+            } else {
+                setErrors([{ type: response.messageType, step: response.step, info: response.message }]);
             }
         }
-        setLoading(false)
+        setLoading(false);
     };
 
     const nextHandle = () => {
@@ -97,24 +95,23 @@ export default function Page() {
             } else if (formData.phone.length !== 10) {
                 newErrors.push({ type: "phone", step: 3, info: "Telefon numarası 10 haneli olmalıdır." });
             }
-
+            // Ayrı state üzerinden yasal onay kontrolü
+            if (!isLegalChecked) {
+                newErrors.push({ type: "legalCheck", step: 3, info: "Kullanım koşullarını, gizlilik politikasını ve KVKK aydınlatma metnini onaylamalısınız." });
+            }
         }
 
         if (newErrors.length > 0) {
-            // Mevcut hataları koru, aynı tipleri güncelle ve yeni hataları ekle
             setErrors(prev => [...prev.filter(err => !newErrors.some(ne => ne.type === err.type)), ...newErrors]);
             return;
         }
 
-        // Hata yoksa sonraki adıma geç
         if (step < 3) {
             setStep(step + 1);
         } else {
             kayitOl();
         }
     };
-
-
 
     const isButtonDisabled = 
         loading || 
@@ -216,18 +213,32 @@ export default function Page() {
                                         className={styles.phoneInputClass} 
                                         onChange={(e) => {
                                             const rawValue = e.target.value;
-                                            
-                                            // Eğer girilen değerin içinde rakam dışı bir karakter varsa, hiç işleme alma (state'i değiştirme, hatalara dokunma)
                                             if (/[^0-9]/.test(rawValue)) {
                                                 return; 
                                             }
-
                                             const numericValue = rawValue.slice(0, 10);
                                             handleChange({ target: { name: 'phone', value: numericValue } });
                                         }} 
                                     />
                                 </div>
                             </div>
+
+                            {/* Yasal Onay Checkbox Alanı (Ayrı state yönetimi ile) */}
+                            <div className={styles.legalContainer}>
+                                <input 
+                                    type="checkbox" 
+                                    checked={isLegalChecked} 
+                                    onChange={(e) => {
+                                        setIsLegalChecked(e.target.checked);
+                                        setErrors(prev => prev.filter(err => err.type !== 'legalCheck'));
+                                    }}
+                                    className={styles.legalCheckbox}
+                                />
+                                <label className={styles.legalLabel} onClick={() => setIsLegalChecked(!isLegalChecked)}>
+                                    <Link href="/terms-and-conditions" target="_blank" className={styles.legalLink} onClick={(e) => e.stopPropagation()}>Kullanım Koşulları</Link>'nı, <Link href="/privacy-policy" target="_blank" className={styles.legalLink} onClick={(e) => e.stopPropagation()}>Gizlilik Politikası</Link>'nı ve <Link href="/kvkk-aydinlatma-metni" target="_blank" className={styles.legalLink} onClick={(e) => e.stopPropagation()}>KVKK Aydınlatma Metni</Link>'ni okudum, onaylıyorum.
+                                </label>
+                            </div>
+                            
                         </div>
                     )}
                 </div>
@@ -257,7 +268,7 @@ export default function Page() {
             </form>
 
             {successRed && <SuccessRes successRed={successRed} />}
-            {errorRes && <ErrorRes errorRes={errorRes} setErrorRes={setErrorRes}  />}
+            {errorRes && <ErrorRes errorRes={errorRes} setErrorRes={setErrorRes} />}
         </div>
     );
 }

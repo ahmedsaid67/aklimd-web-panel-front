@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation';
 
 async function getHatirlaticilar(params){
     const query = new URLSearchParams(params);
-    console.log('query:',query)
+    //console.log('query:',query)
 
       if (!query.has('page')) {
         query.append('page', '1');
@@ -23,8 +23,7 @@ async function getHatirlaticilar(params){
 
       if(response.ok){
           const data= await response.json()
-          console.log(data)
-
+          //console.log(data)
           return data;
       }
 
@@ -40,12 +39,12 @@ async function getHatirlaticilar(params){
               //const errorData = await response.json();
               //console.log('body var:',errorData)
   
-              return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin"};
+              return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin."};
             }
 
             //console.log("bodysuz")
 
-            return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin"};
+            return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin."};
 
     }
 

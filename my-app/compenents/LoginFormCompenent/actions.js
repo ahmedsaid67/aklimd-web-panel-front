@@ -54,7 +54,7 @@ export async function loginAction(payload){
 
         if (contentType && contentType.includes("application/json")) {
             const errorData = await res.json();
-            console.log('body var:',errorData)
+            //console.log('body var:',errorData)
 
             if (errorData?.email && errorData?.email[0] === "Bu alan zorunlu.") {
                 return { success: false, message: "Lütfen e-posta adresinizi giriniz.", messageType:"email"};

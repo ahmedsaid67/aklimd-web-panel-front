@@ -1,0 +1,106 @@
+.aboutPage {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Üst Banner Alanı */
+.heroSection {
+  background-color: #ebf3fe;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  border-bottom: 0.08rem solid #d6e4fd;
+}
+
+.heroContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+/* İçerik Konteyneri */
+.contentSection {
+  padding: 6rem 1.5rem;
+}
+
+.contentContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* SSS Grid Yapısı (İki kolonlu modern kart yerleşimi) */
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #F9FAFB;
+  border: 0.08rem solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #1D64F2;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 767px) {
+  .heroSection {
+    padding: 6rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 1.85rem;
+  }
+
+  .contentSection {
+    padding: 2.5rem 1rem;
+  }
+
+  .contentContainer {
+    gap: 2rem;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}

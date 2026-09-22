@@ -1,5 +1,5 @@
 'use client';
-import { Menu, User, X, Home, LayoutGrid, Bell, CreditCard, BookOpen, HelpCircle, Mail } from "lucide-react";
+import { Menu, User, X, Home, LayoutGrid, Bell, CreditCard, BookOpen, HelpCircle, Mail, ReceiptText, LogOut } from "lucide-react";
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -14,9 +14,11 @@ export default function Page() {
         { name: "Araçlar", icon: <LayoutGrid size={20} />, link: "/panel/araclar" },
         { name: "Hatırlatıcılar", icon: <Bell size={20} />, link: "/panel/hatirlaticilar" },
         { name: "Paketler", icon: <CreditCard size={20} />, link: "/panel/paketler" },
+        { name: "Faturalar", icon: <ReceiptText size={20} />, link: "/panel/faturalar" },
         { name: "Kullanım Klavuzu", icon: <BookOpen size={20} />, link: "/panel/kullanim-klavuzu" },
         { name: "Sıkça Sorulan Sorular", icon: <HelpCircle size={20} />, link: "/panel/sikca-sorulan-sorular" },
         { name: "Bize Ulaşın", icon:<Mail size={20} />, link: "/panel/bize-ulasin" },
+        { name: "Çıkış Yap", icon: <LogOut size={20} />, link: "/panel/cikis-yap", danger: true },
     ];
 
     return (

@@ -20,7 +20,7 @@ export default function Page() {
         {
             id: 3,
             soru: "Hatırlatıcı hakkı / paketleri nedir ve nasıl çalışır?",
-            cevap: "Sistemimizde hatırlatıcı oluşturabilmek için hesabınızda hatırlatıcı hakkı bulunması gerekir. Bunu bir kullanım kotası gibi düşünebilirsiniz:\n• İhtiyacınıza göre 50 adet, 100 adet veya 500 adet hatırlatıcı hakkı içeren farklı paketler satın alabilirsiniz.\n• Oluşturduğunuz her yeni hatırlatıcı, hesabınızdaki toplam haktan düşer."
+            cevap: "Sistemimizde hatırlatıcı oluşturabilmek için hesabınızda hatırlatıcı hakkı bulunması gerekir. Bunu bir kullanım kotası gibi düşünebilirsiniz:\n• İhtiyacınıza göre 20 adet, 60 adet veya 180 adet hatırlatıcı hakkı içeren farklı paketler satın alabilirsiniz.\n• Oluşturduğunuz her yeni hatırlatıcı, hesabınızdaki toplam haktan düşer."
         },
         {
             id: 4,

@@ -1,12 +1,12 @@
 'use client';
 import styles from './page.module.css';
-import { Plus,ChevronLeft, ChevronRight, Trash2, Pencil  } from 'lucide-react';
+import { Plus,ChevronLeft, ChevronRight, Trash2, Eye  } from 'lucide-react';
 import { useState,useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { deleteHatirlaticilar } from './actions';
 import DeleteCheck from '../DeleteCheck/page'
 import AraclarDeleteWarning from '../AraclarDeleteWarning/page';
-import HatirlatmaTarihleriListWeb from '../HatirlatmaTarihleriListWeb/page'
+
 import Link from 'next/link';
 
 
@@ -27,7 +27,6 @@ export default function Page ({hatirlaticilar}){
     const [statusDeleteCheck,setStatusDeleteCheck] = useState(false);
     const [deleteWarning,setDeleteWarning] = useState(false);
     const searchTimeoutRef = useRef(null);
-    const [hatirlatmaTarihleriOpen,setHatirlatmaTarihleriListOpen] = useState(null)
 
 
     //console.log(selectedIds)
@@ -218,7 +217,7 @@ export default function Page ({hatirlaticilar}){
                     <div className={styles.titleText}>Hatırlatma Türü</div>
                     <div className={styles.titleText}>Son Tarih</div>
                     <div className={styles.titleText}>Durum</div>
-                    <div className={styles.titleText}></div>
+                    <div className={styles.titleText}>Hatırlatma Tarihleri</div>
                 </div>
                 {hatirlaticilar.results.map((item,index)=>(
                     <div key={item.id ?? index} className={styles.elemanContainer} >
@@ -232,8 +231,12 @@ export default function Page ({hatirlaticilar}){
                         <div className={styles.elemanText}>{item.hatirlatma_turu.charAt(0).toUpperCase() + item.hatirlatma_turu.slice(1)}</div>
                         <div className={styles.elemanText}>{new Date(item.son_tarih).toLocaleDateString('tr-TR')}</div>
                         <div className={styles.elemanText}>{item.durum ? "Aktif" : "Pasif"}</div>
-                        <Link href={`/panel/hatirlaticilar/${item.id}`} className={styles.editIconContainer}>
-                            Hatırlatma Tarihlerini Görüntüle
+                        <Link 
+                            href={`/panel/hatirlaticilar/${item.id}`} 
+                            className={styles.iconOnlyButton} // Yeni, sadeleştirilmiş sınıf
+                            title="Hatırlatma Tarihlerini Görüntüle" // Hover için tooltip
+                        >
+                            <Eye size={20} />
                         </Link>
                     </div>
                 ))}
@@ -281,7 +284,7 @@ export default function Page ({hatirlaticilar}){
 
             {statusDeleteCheck && <DeleteCheck deleteHandle={deleteHandle} setStatusDeleteCheck={setStatusDeleteCheck} />}
             {deleteWarning && <AraclarDeleteWarning setDeleteWarning={setDeleteWarning} />}
-            {hatirlatmaTarihleriOpen && <HatirlatmaTarihleriListWeb id={hatirlatmaTarihleriOpen} setHatirlatmaTarihleriListOpen={setHatirlatmaTarihleriListOpen}/>}
+            
 
         </div>
     )

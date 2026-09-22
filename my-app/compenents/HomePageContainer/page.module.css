@@ -1,0 +1,366 @@
+.container {
+  min-height: 100vh;
+  font-family: inherit;
+  color: #333;
+  font-size: 1rem; /* Web düz metin boyutu */
+}
+
+.pageTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.3rem;
+}
+
+.welcomeSubtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* İSTATİSTİK KUTULARI */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.08rem solid #d1d5db;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 0.25rem solid #1D64F2;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #777;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* BANNER KARTI */
+.bannerCard {
+  background: #1D64F2;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(29, 100, 242, 0.15);
+}
+
+.bannerInfo h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.bannerInfo p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+/* Arka planla karışmayan sade ve net buton */
+.bannerButton {
+  background-color: #ffffff;
+  color: #1D64F2;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.bannerButton:hover {
+  background-color: #f8fafc;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+
+/* 2'Lİ YAN YANA IZGARA */
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.contentCard {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.08rem solid #d1d5db;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardHeaderFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardHeaderFlex h3, .contentCard h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+.linkText {
+  font-size: 0.85rem;
+  color: #1D64F2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
+
+/* VİDEO ÖNİZLEME KUTUSU */
+.videoPreviewBox {
+  background: #0f172a;
+  border-radius: 0.5rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.playIconCircle {
+  width: 2rem;
+  height: 2rem;
+  background: rgba(29, 100, 242, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  padding-left: 0.1rem;
+}
+
+.videoPreviewBox span {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* S.S.S LİSTESİ */
+.faqList {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* BİLGİLENDİRME PANO (SMS - MAİL) */
+.infoPanoCard {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.08rem solid #d1d5db;
+}
+
+.panoHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.panoHeader h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  background: #F8FAFC;
+  border-radius: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.infoTitle {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.infoValue {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* BUTONLAR */
+.primaryButton {
+  background-color: #1D64F2;
+  color: white;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.primaryButton:hover {
+  background-color: #154ab8;
+}
+
+.outlineButton {
+  background-color: transparent;
+  color: #1D64F2;
+  border: 1px solid #1D64F2;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+  display: block;
+}
+
+.outlineButton:hover {
+  background-color: #1D64F2;
+  color: #fff;
+}
+
+
+/* MOBİL UYGULAMA TEK KART TANITIM ALANI */
+.appPromoCard {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 0.08rem solid #d1d5db;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.appPromoCard .panoHeader {
+  margin-bottom: 1.5rem;
+}
+
+.appPromoCard .cardDesc {
+  margin-bottom: 0;
+}
+
+/* Mağaza Butonları Grid Düzeni */
+.appStoreButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+/* MAĞAZA BUTONLARI (Beyaz zemin, hover'da renk değişimi) */
+.storeButton {
+  background-color: #ffffff;
+  color: #1D64F2;
+  border: 0.08rem solid #1D64F2;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+}
+
+.storeButton:hover {
+  background-color: #1D64F2;
+  color: #ffffff;
+}
+/* Butonların iç yazısının tam ortalanması için */
+.appStoreButtons a {
+  text-align: center;
+}
+
+/* Mobilde butonların alt alta gelmesi */
+@media (max-width: 768px) {
+  .appStoreButtons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESPONSIVE (MOBİL UYUMLULUK) */
+@media (max-width: 768px) {
+  .container {
+    font-size: 0.9rem; /* Mobilde düz metinler otomatik 0.9rem olur */
+  }
+
+  /* Mobilde başlıkların oranlı olarak küçülmesi */
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+  
+  .welcomeSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bannerInfo h3, .contentCard h3, .panoHeader h3 {
+    font-size: 1.1rem;
+  }
+
+  .twoColumnGrid, .bottomGrid, .bannerCard {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .bannerCard {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+  
+  .bannerButton {
+    display: block;
+    width: 100%;
+  }
+}

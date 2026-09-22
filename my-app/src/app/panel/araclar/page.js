@@ -5,74 +5,98 @@ import Loading from '../../../../compenents/LoadingPanelCompenent/page'
 import AraclarTabloMobil from '../../../../compenents/AraclarTabloMobil/page'
 import { API_ROUTES } from '../../../../utils/constant';
 import { apiClient } from '../../../../lib/api-client';
+import { redirect } from 'next/navigation';
 
-// Veriyi SSR sırasında çekmek için asenkron fonksiyonu çağırıyoruz
 async function getAraclar(params) {
 
-  //await new Promise(resolve => setTimeout(resolve, 3000));
-  // URL'deki tüm parametreleri (page, arac_no, vb.) otomatik olarak al
-  const query = new URLSearchParams(params);
-  console.log('query:',query)
-  
-  // Eğer 'page' yoksa varsayılan olarak 1 ekle
-  if (!query.has('page')) {
-    query.append('page', '1');
-  }
 
-   console.log(`${API_ROUTES.ARACLAR_PAGINATED}?${query.toString()}`)
-
-  const res = await apiClient(`${API_ROUTES.ARACLAR_PAGINATED}?${query.toString()}`, {
-    method: 'GET'
-  });
-
-  const data = await res.json();
-
-  if(!res.ok){
-    if(data.detail==='Geçersiz sayfa.'){
-      throw new Error('Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin')
+    const query = new URLSearchParams(params);
+    //console.log('query:',query)
+    
+    if (!query.has('page')) {
+      query.append('page', '1');
     }
-  }
 
-  return data
+    const response = await apiClient(`${API_ROUTES.ARACLAR_PAGINATED}?${query.toString()}`, {
+      method: 'GET'
+    });
+
+    if(response.ok){
+        const data= await response.json()
+        //console.log(data)
+
+        return data;
+    }
+
+    if (!response.ok) {
+        if (response.status >= 500) {
+            redirect('/internal-server-error');
+        }
+
+        const contentType = response.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+          //const errorData = await response.json();
+          //console.log('body var:',errorData)
+
+          return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin."};
+        }
+
+        //console.log("bodysuz")
+
+        return {status:"error", message:"Geçersiz sayfa. Görüntülemeye çalıştığınız sayfa mevcut değil. Lütfen geçerli bir sayfa numarasıyla tekrar deneyin."};
+
+    }
+
 
 
 }
 
 
-// sunucu hata yonetımıne daha sonra bakacagım. hem auth hatası olabılır hemde server çökme-ınternet hatası gıbı seyler.
+export default async function Page ({searchParams}){
 
-export default async function Page({ searchParams }) {
-  const params = await searchParams;
+    const params = await searchParams;
 
-  return (
+    return (
     <div className={styles.pageContainer}>
-      <div className={styles.pageTitle}>Araçlar</div>
-      
-      {/* 2. Suspense: İçerideki component "await" edene kadar fallback'i gösterir */}
       <Suspense fallback={<Loading/>}>
          <AraclarTabloWrapper params={params} />
       </Suspense>
     </div>
   );
+
 }
 
-// 3. Wrapper: Veriyi burada "await" ediyoruz. 
-// "await" buraya geldiği için artık "AraclarTablo"ya sadece temiz veri gidecek.
+
 async function AraclarTabloWrapper({ params }) {
   const araclar = await getAraclar(params);
+  //console.log("araclar:",araclar)
+
+  if (araclar.status==='error'){
+    return(
+        <div>
+            <div className={styles.errorTitle}>Bir Sorunla Karşılaştık</div>
+            <div className={styles.errorContext}>{araclar.message}</div> 
+        </div>
+    )
+  }
   
   return (
     <>
         <div className={styles.otherContainer}>
-          <AraclarTablo araclar={araclar} />   
+          <div className={styles.pageTitle}>Araçlar</div>
+          <AraclarTablo araclar={araclar} /> 
         </div>
         <div className={styles.mobileContainer}>
-          <AraclarTabloMobil araclar={araclar} /> 
+            <div className={styles.pageTitle}>Araçlar</div>
+            <AraclarTabloMobil araclar={araclar} /> 
         </div>
     </>
 
   )
 }
+
+
 
 
 // ssrde veriyi çekerken, await kullanmadığında veri çekilene kadar beklemiyor, bir önceki sayfa donuk kalıyor, veri çekildiğinde yeni sayfa yükleniyor.

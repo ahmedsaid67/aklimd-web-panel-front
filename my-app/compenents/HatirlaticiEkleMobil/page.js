@@ -15,7 +15,7 @@ import 'dayjs/locale/tr';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-
+import NoCreditRes from '../NoCreditRes/page';
 
 
 
@@ -34,6 +34,7 @@ export default function Page ({araclar}){
     const [sonTarihOpen,setSonTarihOpen] = useState(false)
     const [hatirlatmaTarihleriOpen,setHatirlatmaTarihleriOpen] = useState(false)
     const [tarihMessega,setTarihMessega] = useState(null)
+    const [openCreditModal,setOpenCreditModal] = useState(false)
     const calendarRef = useRef(null);
 
     useEffect(() => {
@@ -144,6 +145,24 @@ export default function Page ({araclar}){
     const createHandle = async() => {
         setLoading(true)
 
+
+        const sonTarihStr = dayjs(data.sonTarih).format('YYYY-MM-DD');
+        
+        const hatirlatmaTarihleriGecersiz = data.hatirlatmaTarihleri.some(tarih => {
+            const hatirlatmaStr = dayjs(tarih).format('YYYY-MM-DD');
+            return hatirlatmaStr > sonTarihStr;
+        });
+
+        if (hatirlatmaTarihleriGecersiz) {
+            setTarihMessega({
+                "title": "İşlem Kısıtlaması", 
+                "explanation": "Belirlediğiniz son tarihten daha ileri bir tarihe ait hatırlatma tarihi bulunmaktadır. Hatırlatma tarihi son tarihle aynı veya daha önceki bir tarih olmalıdır. Lütfen kontrol ediniz."
+            });
+            setLoading(false);
+            return;
+        }
+
+
         const payload = {
             arac_id: data.arac.id,
             hatirlatma_turu: data.hatirlaticiTuru.code,
@@ -162,7 +181,12 @@ export default function Page ({araclar}){
                 sonTarih:"",
                 hatirlatmaTarihleri:[]
             })
+        }else{
+            if(response.message==="Yeterli krediniz yok. Hatırlatıcı oluşturulamadı."){
+                setOpenCreditModal(true)
+            }
         }
+
         setLoading(false)
 
     }
@@ -293,6 +317,7 @@ export default function Page ({araclar}){
             )}
 
             {tarihMessega && <TarihWarningModal setTarihMessega={setTarihMessega} tarihMessega={tarihMessega}/>}
+            {openCreditModal && <NoCreditRes setOpenCreditModal={setOpenCreditModal} openCreditModal={openCreditModal}/>}
         </div>
     )
 }

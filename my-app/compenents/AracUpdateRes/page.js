@@ -7,7 +7,7 @@ export default function AracUpdateRes({ setDeleteWarning }) {
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.content}>
 
-                    <div className={styles.warningIcon}>!</div>
+                    <div className={styles.successIcon}>✓</div>
                     
                     <h2 className={styles.title}>Güncelleme Tamamlandı</h2>
                     <p className={styles.desc}>

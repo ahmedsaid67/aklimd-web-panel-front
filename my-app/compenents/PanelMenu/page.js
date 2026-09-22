@@ -1,24 +1,26 @@
 'use client';
-import { usePathname } from 'next/navigation'; // URL'i takip etmek için
+import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { 
   Home, LayoutGrid, Bell, CreditCard, BookOpen, 
-  HelpCircle, Mail, UserCog
+  HelpCircle, Mail, UserCog, ReceiptText, LogOut
 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Page() {
-  const pathname = usePathname(); // Mevcut URL yolunu alır (örn: "/panel/araclar")
+  const pathname = usePathname();
 
   const menuItems = [
     { name: "Ana Sayfa", icon: <Home size={20} />, link: "/panel" },
     { name: "Araçlar", icon: <LayoutGrid size={20} />, link: "/panel/araclar" },
     { name: "Hatırlatıcılar", icon: <Bell size={20} />, link: "/panel/hatirlaticilar" },
     { name: "Paketler", icon: <CreditCard size={20} />, link: "/panel/paketler" },
+    { name: "Faturalar", icon: <ReceiptText size={20} />, link: "/panel/faturalar" },
     { name: "Kullanım Klavuzu", icon: <BookOpen size={20} />, link: "/panel/kullanim-klavuzu" },
     { name: "Sıkça Sorulan Sorular", icon: <HelpCircle size={20} />, link: "/panel/sikca-sorulan-sorular" },
     { name: "Bize Ulaşın", icon: <Mail size={20} />, link: "/panel/bize-ulasin" },
     { name: "Hesap Bilgileri", icon: <UserCog size={20} />, link: "/panel/hesap-bilgileri" },
+    { name: "Çıkış Yap", icon: <LogOut size={20} />, link: "/panel/cikis-yap", danger: true },
   ];
 
   return (
@@ -33,7 +35,6 @@ export default function Page() {
         {menuItems.slice(0, 3).map((item, index) => (
           <Link 
             key={index}
-            // pathname, item.link ile eşleşiyorsa active sınıfını ver
             className={`${styles.menuTab} ${pathname === item.link ? styles.active : ''}`}
             href={item.link}
           >
@@ -59,5 +60,3 @@ export default function Page() {
     </>
   );
 }
-
-// profıl ve cıkıs yap ust bar sag da olsun hespa sıl profıl ıcınde olsunç

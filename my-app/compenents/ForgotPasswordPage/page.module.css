@@ -1,0 +1,156 @@
+.mainContainer {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 28rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2.25rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 1px 1px rgba(0, 0, 0, 0.02);
+    border: 0.08rem solid rgba(226, 232, 240, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.titleSection {
+    margin-bottom: 1.25rem;
+}
+
+.formTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: #0f172a;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.inputLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.inputClass {
+    width: 100%;
+    height: 2.75rem;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    border: 0.08rem solid #cbd5e1;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.inputClass::placeholder {
+    color: #94a3b8;
+}
+
+.inputClass:focus {
+    border-color: #1D64F2;
+    box-shadow: 0 0 0 3px rgba(29, 100, 242, 0.12);
+}
+
+.buttonContainer {
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #1D64F2;
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.buttonContainer:disabled {
+    background-color: #1D64F2;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.buttonContainer:hover:not(:disabled) {
+    background-color: #1551c9;
+}
+
+.buttonContainer:active {
+    transform: scale(0.98);
+}
+
+
+
+.bottomContainer {
+    width: 100%;
+    height: 3.5rem;
+    margin-top: 1rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.errorBox {
+    background-color: #fef2f2;
+    border: 0.08rem solid #fecaca;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.successBox {
+    background-color: #f0fdf4;
+    border: 0.08rem solid #bbf7d0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.errorList {
+    list-style-type: disc;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.errorText {
+    font-size: 0.7rem;
+    color: #b91c1c;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.successText {
+    font-size: 0.7rem;
+    color: #15803d;
+    font-weight: 500;
+    line-height: 1.1;
+}

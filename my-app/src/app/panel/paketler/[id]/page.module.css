@@ -54,13 +54,7 @@
     color: #1d64f2;
 }
 
-.otherContainer{
-    display: block;
-}
 
-.mobileContainer{
-    display: none;
-}
 
 
 @media (max-width: 767px) {
@@ -91,12 +85,5 @@
         border-radius: 0.5rem;
     }
 
-    .otherContainer{
-        display: none;
-    }
-
-    .mobileContainer{
-        display: block;
-    }
 
 }

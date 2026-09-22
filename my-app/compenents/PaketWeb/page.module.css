@@ -4,6 +4,9 @@
     border-radius: 0.75rem;
     border: 0.08rem solid #d1d5db;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mainContainer {
@@ -47,9 +50,15 @@
 .editButton {
     background: none;
     border: none;
-    color: #0f172a;
     font-weight: 600;
     cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #1D64F2;
+}
+
+.editButton:hover {
+    text-decoration: underline;
 }
 
 .warningBox {
@@ -61,10 +70,38 @@
     font-size: 0.9rem;
 }
 
-.warningBox span {
+.warningLink {
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* Fatura Bilgileri Gösterim Alanı */
+.billingInfo {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.billingName {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem 0;
+    color: #0f172a;
+}
+
+.billingInlineContact {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.billingAddress {
+    margin: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    word-break: break-word;
 }
 
 /* Ödeme Yöntemi Sekmeleri */
@@ -79,34 +116,42 @@
 .tabButton {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: 0.08rem solid #cbd5e1;
-    background: #fff;
-    cursor: pointer;
+    border: 0.08rem solid #1D64F2;
+    background-color: #1D64F2;
     font-weight: 500;
-}
-
-.tabButton.active {
-    background: #0f172a;
     color: #fff;
-    border-color: #0f172a;
+    font-size: 0.9rem;
 }
 
-.noCardText {
-    text-align: center;
-    color: #94a3b8;
-    margin: 20px 0;
-    font-size: 14px;
-}
-
-.addCardButton {
-    width: 100%;
-    padding: 0.75rem;
-    border: 0.08rem dashed #cbd5e1;
-    background: #f8fafc;
+/* Ödeme Bilgilendirme Kutusu */
+.paymentInfoBox {
+    display: flex;
+    gap: 1rem;
+    background-color: #f8fafc;
+    border: 0.08rem solid #e2e8f0;
+    padding: 1.25rem;
     border-radius: 0.5rem;
-    font-weight: 600;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.paymentInfoIcon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.paymentInfoText {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.paymentInfoText strong {
     color: #0f172a;
-    cursor: pointer;
+}
+
+.paymentInfoText p {
+    margin: 0.25rem 0 0 0;
 }
 
 /* Sağ Sepet / Özet Alanı */
@@ -130,29 +175,157 @@
     margin: 1rem 0;
 }
 
+/* --- Sözleşme Alanı --- */
 .agreementContainer {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 1.1rem 0;
-    font-size: 0.9rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+    font-size: 0.85rem;
     color: #475569;
+    background: #f8fafc;
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    border: 0.08rem solid #e2e8f0;
 }
 
-.agreementContainer span {
-    color: #2563eb;
+.agreementCheckbox {
+    margin-top: 0.15rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    accent-color: #1D64F2;
+    flex-shrink: 0;
+}
+
+.agreementLabel {
+    cursor: pointer;
+    line-height: 1.4;
+    user-select: none;
+}
+
+.agreementLink {
+    color: #1D64F2;
     text-decoration: underline;
     cursor: pointer;
+    font: inherit;
+    display: inline;
+}
+
+.agreementLink:hover {
+    color: #1551c9;
 }
 
 .completeButton {
     width: 100%;
     padding: 0.9rem;
-    background-color: #94a3b8; /* Normalde disabled iken gri, aktifken koyu renk */
+    background-color: #1D64F2;
     color: white;
     border: none;
     border-radius: 0.5rem;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.completeButton:hover {
+    background-color: #1551c9;
+}
+
+.completeButton:disabled {
+    background-color: #93B6F8;
+    cursor: not-allowed;
+}
+
+/* --- PayTR Modal ve Iframe Stilleri --- */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modalContainer {
+    background: #fff;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modalHeader {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalTitle {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.modalCloseButton {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+}
+
+.modalBody {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.paytrIframe {
+    width: 100%;
+    height: 550px;
+    border: none;
+}
+
+
+/* --- Ödeme Güvenlik ve Logo Bant Alanı --- */
+.securityBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 0.08rem solid #e2e8f0;
+    width: 100%;
+}
+
+.securityBannerImg {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 4rem; /* Görselin boyutunu sayfaya göre dengeler */
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+    .pageWrapper {
+        padding: 1rem;
+    }
 }

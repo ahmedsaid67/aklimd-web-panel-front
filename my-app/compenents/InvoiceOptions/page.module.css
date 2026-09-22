@@ -1,0 +1,126 @@
+.mainContainer{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.pupupContainer{
+    width: 100%;
+
+    background: #fff;
+
+    padding: 1rem;
+    padding-bottom: 5rem;
+
+    border-radius: 1rem 1rem 0 0;
+
+    touch-action: none;
+    will-change: transform;
+}
+
+.ustTabContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.ustTab{
+    width: 5rem;
+    height: .35rem;
+
+    background: #bdbdbd;
+
+    border-radius: 999px;
+}
+
+.title{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    border: .08rem solid #d1d5db;
+    border-radius: 0.5rem;
+}
+
+.infoTitle{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.infoText{
+    font-size: 0.9rem;
+    color: #4B5563;
+}
+
+.actionContainer {
+    margin-top: 1.5rem;
+}
+
+.downloadButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #1D64F2;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.downloadButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.disabledDownloadButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #f3f4f6;
+    color: #9ca3af;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: not-allowed;
+    box-sizing: border-box;
+}
+
+.spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

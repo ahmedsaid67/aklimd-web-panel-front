@@ -1,0 +1,194 @@
+.tableContainer {
+    width: 100%;
+}
+
+.mainContainer {
+    width: 100%;
+    min-height: 15rem;
+    border: 0.08rem solid #d1d5db;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.headerContainer {
+    padding: 1.25rem 2rem;
+    border-bottom: 0.08rem solid #e5e7eb;
+    background-color: #fff;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.infoText {
+    font-size: 0.9rem;
+    color: #4B5563;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.titleContainer {
+    padding: 1rem 2rem;
+    background-color: #ebf3fe;
+    display: grid;
+    grid-template-columns: 1.25fr 2.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titleText {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #4B5563;
+}
+
+.elemanContainer {
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1.25fr 2.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 0.08rem solid #d1d5db;
+}
+
+
+.elemanText {
+    font-size: 0.95rem;
+    color: #4B5563;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.invoiceNoBadge {
+    font-size: 0.95rem;
+    color: #4B5563;
+    font-weight: 600;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.statusSuccess {
+    background-color: #DEF7EC;
+    color: #03543F;
+}
+
+.statusPending {
+    background-color: #FEF08A;
+    color: #713F12;
+}
+
+.actionContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.downloadButton {
+    background-color: #1D64F2;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.downloadButton:hover {
+    background-color: #1858d6;
+}
+
+.disabledDownloadButton {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: not-allowed;
+}
+
+.bottomBarContainer {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.bottomBarText {
+    font-size: 0.95rem;
+    color: #4B5563;
+}
+
+.bottomButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pageButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #d1d5db;
+    border: none;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.activeButton {
+    background-color: #1D64F2;
+    color: hak;
+    color: #fff;
+}
+
+.leftButton, .rightButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: #d1d5db;
+    color: rgb(29,29,31);
+    border: none;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.disabledButton {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #666;
+    user-select: none;
+}

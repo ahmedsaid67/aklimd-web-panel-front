@@ -1,0 +1,200 @@
+.aboutPage {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Üst Banner Alanı */
+.heroSection {
+  background-color: #ebf3fe;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  border-bottom: 0.08rem solid #d6e4fd;
+}
+
+.heroContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+/* İçerik Konteyneri */
+.contentSection {
+  padding: 6rem 1.5rem;
+}
+
+.contentContainer {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.storyBlock h2,
+.visionBlock h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.storyBlock p,
+.visionBlock p {
+  font-size: 1.125rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Kullanım Koşulları, Gizlilik Politikası ve metin içerikleri için hiyerarşi */
+.storyBlock h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.storyBlock h2:first-of-type {
+  margin-top: 0;
+}
+
+/* İki kolonlu genel kart yapısı */
+.gridBlock,
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #F9FAFB;
+  border: 0.08rem solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  transition: border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  border-color: #1D64F2;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* İletişim Liste Elemanları */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.contactItem {
+  font-size: 1rem;
+  color: #4B5563;
+}
+
+.contactItem strong {
+  color: #111827;
+  margin-right: 0.5rem;
+}
+
+.contactItem a {
+  color: #1D64F2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactItem a:hover {
+  text-decoration: underline;
+}
+
+/* Mağaza İndirme Butonları */
+.storeButton {
+  display: inline-block;
+  background-color: #1D64F2;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.storeButton:hover {
+  background-color: #154ec4;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 767px) {
+  .heroSection {
+    padding: 6rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 1.85rem;
+  }
+
+  .contentSection {
+    padding: 2.5rem 1rem;
+  }
+
+  .contentContainer {
+    gap: 2rem;
+  }
+
+  .storyBlock h2,
+  .visionBlock h2 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .storyBlock p,
+  .visionBlock p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .gridBlock,
+  .faqGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+  }
+
+  .card p, 
+  .contactItem {
+    font-size: 0.9rem;
+  }
+
+  .storeButton {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}

@@ -1,0 +1,138 @@
+/* Ortak Modal Katmanları (Mevcut yapınız korundu) */
+.overlay {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(4px); z-index: 1000;
+}
+
+.modal {
+    background: white; padding: 2rem; border-radius: 1.5rem;
+    width: 33rem; height: 21rem; /* Web için biraz daha büyütüldü */
+    display: flex; flex-direction: column; justify-content: center;
+    align-items: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.content { 
+    width: 100%; display: flex; flex-direction: column; 
+    align-items: center; gap: 1.25rem; 
+}
+
+/* Metinler ve Renkleri */
+.title { 
+    font-size: 1.5rem; 
+    color: #0f172a; /* Daha canlı ve modern koyu renk */
+    font-weight: 700;
+    margin: 0; 
+}
+
+.desc { 
+    color: #475569; /* Okunabilirliği artıran şık gri tonu */
+    font-size: 0.98rem;
+    margin: 0; 
+    line-height: 1.5; 
+    padding: 0 1rem; 
+}
+
+/* Buton Konteyneri ve Özel Ölçülendirme */
+.buttonContainer { 
+    display: flex; 
+    gap: 0.75rem; 
+    width: 100%; 
+    margin-top: 0.5rem; 
+}
+
+.btnPackage, .btnCloseModal {
+    padding: 0.8rem 1rem; 
+    border-radius: 0.75rem; 
+    border: none;
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Paketleri İncele Butonu (Öne çıkması için daha geniş oran verildi: flex: 1.6) */
+.btnPackage { 
+    background: #1D64F2; 
+    color: white; 
+    flex: 1.6; 
+    box-shadow: 0 4px 12px rgba(29, 100, 242, 0.25);
+}
+
+.btnPackage:hover { 
+    background: #1858d6; 
+}
+
+/* Kapat Butonu (Daha kısa tutuldu: flex: 0.9) */
+.btnCloseModal { 
+    background: #f3f4f6; 
+    color: #374151; 
+    flex: 0.9; 
+}
+
+.btnCloseModal:hover { 
+    background: #e5e7eb; 
+}
+
+/* Özel İkonlar */
+.warningIcon {
+    width: 4rem; height: 4rem; background: #FEF3C7;
+    color: #D97706; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem;
+}
+
+.successIcon {
+    width: 4rem; height: 4rem; background: #D1FAE5;
+    color: #059669; border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem;
+}
+
+/* Mobil Uyum (Responsive) */
+@media (max-width: 768px) {
+    .modal {
+        width: 90%;
+        max-width: 22rem;
+        height: auto;
+        min-height: 16rem;
+        padding: 1.5rem;
+    }
+
+    .content {
+        gap: 1rem;
+    }
+
+    .warningIcon,
+    .successIcon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        font-size: 0.95rem;
+        padding: 0;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+    }
+
+    .btnPackage,
+    .btnCloseModal {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+        flex: 1; /* Mobilde eşit boyuta döner */
+    }
+}

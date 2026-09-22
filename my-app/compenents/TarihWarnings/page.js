@@ -6,8 +6,11 @@ export default function TarihWarningModal({ setTarihMessega,tarihMessega }) {
         <div className={styles.overlay} onClick={() => setTarihMessega(null)}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.content}>
-                    {/* Uyarı ikonu - İstersen bir SVG icon da koyabilirsin */}
-                    <div className={styles.warningIcon}>!</div>
+
+
+                    <div className={tarihMessega.title ==="İşlem Başarılı" ? styles.successIcon : styles.warningIcon}>
+                        {tarihMessega.title ==="İşlem Başarılı" ? "✓" : "!"}
+                    </div>
                     
                     <h2 className={styles.title}>{tarihMessega.title}</h2>
                     <p className={styles.desc}>

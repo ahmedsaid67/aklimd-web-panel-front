@@ -6,8 +6,11 @@ export default function BizeUlasinRes({ setYanit,yanit }) {
         <div className={styles.overlay} onClick={() => setYanit(null)}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.content}>
-                    {/* Uyarı ikonu - İstersen bir SVG icon da koyabilirsin */}
-                    <div className={styles.warningIcon}>!</div>
+
+
+                    <div className={yanit.title ==="İşlem Başarılı" ? styles.successIcon : styles.warningIcon}>
+                        {yanit.title ==="İşlem Başarılı" ? "✓" : "!"}
+                    </div>
                     
                     <h2 className={styles.title}>{yanit.title}</h2>
                     <p className={styles.desc}>

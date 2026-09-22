@@ -1,0 +1,25 @@
+.pageContainer{
+    padding:  2rem;
+}
+
+.pageTitle {
+    font-size: 1.75rem;     
+    font-weight: 750;               
+    margin-bottom: 2rem;    
+    letter-spacing: -0.02em; 
+}
+
+
+@media (max-width: 767px) {
+    .pageContainer{
+        padding: 1rem;
+    }
+
+    .pageTitle {
+        font-size: 1.25rem;     
+        font-weight: 650;               
+        margin-bottom: 2rem;    
+        letter-spacing: -0.02em; 
+    }
+
+}

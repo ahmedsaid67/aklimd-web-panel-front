@@ -11,6 +11,7 @@ import TarihWarningModal from "../TarihWarnings/page";
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import { hatirlaticiKaydet } from "./actions";
+import NoCreditRes from "../NoCreditRes/page";
 
 
 // Eklentileri aktif et (bunu genelde main.js veya dayjs'i konfigüre ettiğiniz yerde bir kez yaparsınız)
@@ -34,6 +35,7 @@ export default function HatirlaticiEkleWeb({araclar}) {
         hatirlatmaTarihleri:[]
     })
     const [tarihMessega,setTarihMessega] = useState(null)
+    const [openCreditModal,setOpenCreditModal] = useState(false)
 
     const dataAdd = (type, data) => {
         if (["arac", "hatirlaticiTuru"].includes(type)) {
@@ -175,6 +177,24 @@ export default function HatirlaticiEkleWeb({araclar}) {
             return;
         }
 
+        const sonTarihStr = dayjs(formData.sonTarih).format('YYYY-MM-DD');
+        
+        const hatirlatmaTarihleriGecersiz = formData.hatirlatmaTarihleri.some(tarih => {
+            const hatirlatmaStr = dayjs(tarih).format('YYYY-MM-DD');
+            return hatirlatmaStr > sonTarihStr;
+        });
+
+        if (hatirlatmaTarihleriGecersiz) {
+            setTarihMessega({
+                "title": "İşlem Kısıtlaması", 
+                "explanation": "Belirlediğiniz son tarihten daha ileri bir tarihe ait hatırlatma tarihi bulunmaktadır. Hatırlatma tarihi son tarihle aynı veya daha önceki bir tarih olmalıdır. Lütfen kontrol ediniz."
+            });
+            setLoading(false);
+            return;
+        }
+
+  
+
 
         const payload = {
             arac_id: formData.arac.id,
@@ -198,6 +218,10 @@ export default function HatirlaticiEkleWeb({araclar}) {
                 sonTarih: "",
                 hatirlatmaTarihleri: []
             });
+        }else{
+            if(result.message==="Yeterli krediniz yok. Hatırlatıcı oluşturulamadı."){
+                setOpenCreditModal(true)
+            }
         }
 
         setLoading(false);
@@ -439,6 +463,7 @@ export default function HatirlaticiEkleWeb({araclar}) {
                 </div>
             </div>
             {tarihMessega && <TarihWarningModal setTarihMessega={setTarihMessega} tarihMessega={tarihMessega}/>}
+            {openCreditModal && <NoCreditRes setOpenCreditModal={setOpenCreditModal} openCreditModal={openCreditModal}/>}
         </div>
     );
 }

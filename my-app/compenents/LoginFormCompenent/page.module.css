@@ -101,6 +101,24 @@
     transform: scale(0.98);
 }
 
+
+.authLinks {
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.authLinks > a,
+.registerLink > a {
+    color: #1D64F2;
+}
+
+.registerLink {
+    display: flex;
+    gap: 0.25rem;
+}
+
+
+
 .bottomContainer {
     width: 100%;
     /* Sabit alan: 3 hata satırı sığacak kadar veya ihtiyacına göre */

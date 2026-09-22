@@ -32,8 +32,12 @@ export async function hatirlaticiKaydet(formData) {
 
             if (contentType && contentType.includes("application/json")) {
 
-                //const errorData = await res.json();
+                const errorData = await res.json();
                 //console.log('body var:',errorData)
+
+                if (errorData && errorData.detail === "Yeterli krediniz yok. Hatırlatıcı oluşturulamadı."){
+                    return { success: false, message: "Yeterli krediniz yok. Hatırlatıcı oluşturulamadı." };
+                }
 
                 return { success: false, message: "Hatırlatıcı oluşturulamadı." };
             }
