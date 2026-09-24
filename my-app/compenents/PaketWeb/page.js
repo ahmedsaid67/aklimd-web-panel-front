@@ -5,6 +5,7 @@ import Link from "next/link";
 import OnBilgilendirmeFormu from '../OnBilgilendirmeFormu/page';
 import MesafeliSatisSozlesmesi from '../MesafeliSatisSozlesmesi/page';
 import { odemeBaslat } from "./actions";
+import ErrorRes from "../ErrorRes/page";
 
 export default function Page({ paket }) {
     const pkg = paket.data.package;
@@ -15,18 +16,19 @@ export default function Page({ paket }) {
     const [isBilgilendirmeOpen, setIsBilgilendirmeOpen] = useState(false);
     const [paytrToken, setPaytrToken] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [errorRes,setErrorRes] = useState(null)
 
     const [mesafeliSatisInfo, setMesafeliSatisInfo] = useState({
         isOpen: false,
-        profileType: billing?.profile_type,
-        firstName: billing?.first_name,
-        lastName: billing?.last_name,
-        companyName: billing?.company_name,
-        addressLine: billing?.address_line,
-        city: billing?.city,
-        country: billing?.country,
-        email: billing?.email,
-        phone_number: billing?.phone_number,
+        profileType: billing.profile_type,
+        firstName: billing.first_name,
+        lastName: billing.last_name,
+        companyName: billing.company_name,
+        addressLine: billing.address_line,
+        city: billing.city,
+        country: billing.country,
+        email: billing.email,
+        phone_number: billing.phone_number,
     });
 
     const handleOpenPreliminaryInfo = () => {
@@ -49,18 +51,14 @@ export default function Page({ paket }) {
 
     const handlePayment = async () => {
         setIsLoading(true);
-        try {
-            const result = await odemeBaslat(pkg.id);
 
-            if (result.success) {
-                setPaytrToken(result.token);
-            } else {
-                alert(result.message || "Ödeme başlatılamadı.");
-            }
-        } catch (error) {
-            console.error("Ödeme hatası:", error);
-            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-        } finally {
+        const result = await odemeBaslat(pkg.id);
+
+        if (result.success) {
+            setPaytrToken(result.token);
+            setIsLoading(false);
+        } else {
+            setErrorRes(result.message);
             setIsLoading(false);
         }
     };
@@ -84,20 +82,20 @@ export default function Page({ paket }) {
                             </div>
                         ) : (
                             <div className={styles.billingInfo}>
-                                <p className={styles.billingName}>
+                                <div className={styles.billingName}>
                                     <strong>{billing.profile_type === 'corporate' ? billing.company_name : `${billing.first_name} ${billing.last_name}`}</strong>
-                                </p>
+                                </div>
                                 <div className={styles.billingInlineContact}>
-                                    <span>{billing.email}</span>
+                                    <div>{billing.email}</div>
                                     {billing.phone_number && (
                                         <>
-                                            <span>•</span>
-                                            <span>{billing.phone_number.replace(/^\+90(\d{3})(\d{3})(\d{2})(\d{2})/, '0$1 $2 $3 $4')}</span>
+                                            <div>•</div>
+                                            <div>{billing.phone_number.replace(/^\+90(\d{3})(\d{3})(\d{2})(\d{2})/, '0$1 $2 $3 $4')}</div>
                                         </>
                                     )}
                                 </div>
-                                <p className={styles.billingAddress}>{billing.address_line}</p>
-                                <p className={styles.billingAddress}>{billing.country} / {billing.city} {billing.postal_code}</p>
+                                <div className={styles.billingAddress}>{billing.address_line}</div>
+                                <div className={styles.billingAddress}>{billing.country} / {billing.city} {billing.postal_code}</div>
                             </div>
                         )}
                     </div>
@@ -112,7 +110,7 @@ export default function Page({ paket }) {
                             <div className={styles.paymentInfoIcon}>🔒</div>
                             <div className={styles.paymentInfoText}>
                                 <strong>Güvenli Ödeme</strong>
-                                <p>Ödeme, PayTR altyapısı kullanılarak alınmaktadır. <strong>&quot;Ödemeyi Tamamla&quot;</strong> butonuna bastıktan sonra güvenli ödeme penceresi açılacaktır.</p>
+                                <div>Ödeme, PayTR altyapısı kullanılarak alınmaktadır. <strong>&quot;Ödemeyi Tamamla&quot;</strong> butonuna bastıktan sonra güvenli ödeme penceresi açılacaktır.</div>
                             </div>
                         </div>
                     </div>
@@ -124,24 +122,24 @@ export default function Page({ paket }) {
                         <h3>SİPARİŞ ÖZETİ</h3>
                         
                         <div className={styles.summaryRow}>
-                            <span>{pkg.title || "Paket"}</span>
-                            <span>{pkg.price ? `${Number(pkg.price).toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺` : "4.000,00 ₺"}</span>
+                            <div>{pkg.title || "Paket"}</div>
+                            <div>{pkg.price ? `${Number(pkg.price).toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺` : "4.000,00 ₺"}</div>
                         </div>
 
                         <div className={styles.summaryRow}>
-                            <span>KDV (%20)</span>
-                            <span>
+                            <div>KDV (%20)</div>
+                            <div>
                                 {pkg.price && pkg.tax_included_price 
                                     ? `${Number(parseFloat(pkg.tax_included_price) - parseFloat(pkg.price)).toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺` 
                                     : "0,00 ₺"}
-                            </span>
+                            </div>
                         </div>
 
                         <hr className={styles.divider} />
 
                         <div className={styles.totalRow}>
-                            <span>Toplam</span>
-                            <span>{pkg.tax_included_price ? `${Number(pkg.tax_included_price).toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺` : "4.800,00 ₺"}</span>
+                            <div>Toplam</div>
+                            <div>{pkg.tax_included_price ? `${Number(pkg.tax_included_price).toLocaleString('tr-TR', { minimumFractionDigits: 2 })} ₺` : "4.800,00 ₺"}</div>
                         </div>
 
                         {/* Sözleşme Onay Alanı */}
@@ -151,13 +149,14 @@ export default function Page({ paket }) {
                                 className={styles.agreementCheckbox}
                                 checked={isChecked}
                                 onChange={(e) => setIsChecked(e.target.checked)}
+                                autoComplete="off"
                             />
-                            <span className={styles.agreementLabel}>
-                                <span onClick={handleOpenPreliminaryInfo} className={styles.agreementLink}>Ön Bilgilendirme Formu</span>
+                            <div className={styles.agreementLabel}>
+                                <div onClick={handleOpenPreliminaryInfo} className={styles.agreementLink}>Ön Bilgilendirme Formu</div>
                                 &apos;nu ve&nbsp;
-                                <span onClick={handleOpenDistanceSalesAgreement} className={styles.agreementLink}>Mesafeli Satış Sözleşmesi</span>
+                                <div onClick={handleOpenDistanceSalesAgreement} className={styles.agreementLink}>Mesafeli Satış Sözleşmesi</div>
                                 &apos;ni okudum, onaylıyorum.
-                            </span>
+                            </div>
                         </div>
 
                         <button 
@@ -179,9 +178,8 @@ export default function Page({ paket }) {
                     className={styles.securityBannerImg}
                 />
             </div>
-            
 
-            {/* PAYTR İFRAME MODAL (Açılır Pencere) */}
+            {/* PAYTR İFRAME MODAL */}
             {paytrToken && (
                 <div className={styles.modalOverlay}>
                     <div className={styles.modalContainer}>
@@ -207,6 +205,7 @@ export default function Page({ paket }) {
 
             {isBilgilendirmeOpen && <OnBilgilendirmeFormu onClose={() => setIsBilgilendirmeOpen(false)} />}
             {mesafeliSatisInfo.isOpen && <MesafeliSatisSozlesmesi info={mesafeliSatisInfo} onClose={onCloseSatis} />}
+            {errorRes && <ErrorRes errorRes={errorRes} setErrorRes={setErrorRes} />}
         </div>
     );
 }

@@ -40,7 +40,7 @@ export default function MesafeliSatisSozlesmesi({ info, onClose }) {
 
                     {/* Kaydırma Çubuğu Olan Metin Alanı */}
                     <div className={styles.scrollableTextContent}>
-                        <p className={styles.updateDate}><strong>Son Güncelleme Tarihi:</strong> 18.09.2026</p>
+                        <p className={styles.updateDate}><strong>Son Güncelleme Tarihi:</strong> 24.09.2026</p>
                         
                         <p>
                             İşbu Mesafeli Satış Sözleşmesi; Gökhan ADIGÜZEL (“Satıcı / Hizmet Sağlayıcı”) tarafından işletilen Aklımda resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında Alıcı&apos;yı bilgilendirmek ve tarafların hak ve yükümlülüklerini belirlemek amacıyla hazırlanmıştır.

@@ -16,7 +16,7 @@ export default function OnBilgilendirmePage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son Güncelleme Tarihi: 18.09.2026
+              Son Güncelleme Tarihi: 24.09.2026
             </p>
             <p>
               İşbu Ön Bilgilendirme Formu; Gökhan ADIGÜZEL (“Hizmet Sağlayıcı”) tarafından işletilen <strong>Aklımda</strong> resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında Alıcı'yı bilgilendirmek amacıyla hazırlanmıştır.

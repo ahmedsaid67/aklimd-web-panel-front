@@ -2,56 +2,121 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
-    padding: 20px;
+    min-height: 80vh;
+    padding: 1.5rem;
 }
 
 .card {
     background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 40px 30px;
-    max-width: 500px;
+    border: 0.08rem solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    max-width: 32rem;
     width: 100%;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.08), 0 0.25rem 0.5rem -0.25rem rgba(0, 0, 0, 0.04);
 }
 
 .icon {
-    font-size: 54px;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1;
 }
 
 .card h1 {
-    font-size: 22px;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #111827;
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
 }
 
 .card p {
-    font-size: 15px;
-    color: #4b5563;
-    line-height: 1.5;
-    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .buttonGroup {
     display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     justify-content: center;
 }
 
 .primaryButton {
-    background-color: #10b981; /* Başarı yeşili */
+    background-color: #1D64F2;
     color: #ffffff;
     font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
     text-decoration: none;
     transition: background-color 0.2s;
     display: inline-block;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 .primaryButton:hover {
-    background-color: #059669;
+    background-color: #1551c9;
+}
+
+.secondaryButton {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+    font-size: 0.95rem;
+    border: 0.08rem solid #cbd5e1;
+    cursor: pointer;
+    width: 100%;
+}
+
+.secondaryButton:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+/* --- Responsive (768px ve Altı İçin Mobil Uyumluluk) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        min-height: auto;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .card h1 {
+        font-size: 1.15rem;
+    }
+
+    .card p {
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .primaryButton, .secondaryButton {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
 }

@@ -16,7 +16,7 @@ export default function CerezPolitikasiPage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son Güncelleme Tarihi: 18.09.2026
+              Son Güncelleme Tarihi: 24.09.2026
             </p>
             <p>
               İşbu Çerez Politikası; Gökhan ADIGÜZEL (“Veri Sorumlusu”) tarafından işletilen <strong>Aklımda</strong> resmi web sitesi (arabamuayene.com.tr) üzerinden ziyaretçilere sunulan çerez kullanımına ilişkin hususları açıklamak amacıyla hazırlanmıştır.

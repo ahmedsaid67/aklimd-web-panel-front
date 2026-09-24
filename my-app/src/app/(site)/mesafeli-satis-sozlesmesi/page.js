@@ -16,7 +16,7 @@ export default function MesafeliSatisSozlesmesiPage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son Güncelleme Tarihi: 18.09.2026
+              Son Güncelleme Tarihi: 24.09.2026
             </p>
             <p>
               İşbu Mesafeli Satış Sözleşmesi; Gökhan ADIGÜZEL (“Satıcı / Hizmet Sağlayıcı”) tarafından işletilen <strong>Aklımda</strong> resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında Alıcı'yı bilgilendirmek ve tarafların hak ve yükümlülüklerini belirlemek amacıyla hazırlanmıştır.
@@ -41,7 +41,7 @@ export default function MesafeliSatisSozlesmesiPage() {
 
             <h2>Madde 2: Sözleşmenin Konusu</h2>
             <p>
-              <strong>2.1.</strong> İşbu Sözleşme'nin konusu; mülkiyeti, fikri ve sınai hakları Satıcı'ya ait olan <strong>Aklımda</strong> platformu (arabamuayene.com.tr) üzerinden, araçlara ait muayene, sigorta, vergi ve kasko periyotları için hatırlatıcı oluşturulması amacıyla satışı yapılan hatırlatıcı hakkı paketlerinin elektronik ortamda sunulması ve satışı ile ilgili olarak Taraflar'ın hak ve yükümlülüklerinin düzenlenmesidir.
+              <strong>2.1.</strong> İşbu Sözleşme'nin konusu; mülkiyeti, fikri ve sınai hakları Satıcı'ya ait olan <strong>Aklımda</strong> platformu (arabamuayene.com.tr) üzerinden, araçlara ait muayene, sigorta, vergi ve kasko periyotları için hatırlatıcı oluşturulması amacıyla <strong>periyodik bir abonelik olmaksızın, tamamen tek seferlik olarak</strong> satışı yapılan hatırlatıcı hakkı paketlerinin elektronik ortamda sunulması ve satışı ile ilgili olarak Taraflar'ın hak ve yükümlülüklerinin düzenlenmesidir.
             </p>
             <p>
               <strong>2.2.</strong> İşbu Sözleşme ile Satıcı seçilen hatırlatıcı hakkı paketini sunmayı; Alıcı ise bu paket karşılığında sözleşmede kararlaştırılan bedeli ödemeyi kabul ettiğini beyan eder.
@@ -52,7 +52,7 @@ export default function MesafeliSatisSozlesmesiPage() {
 
             <h2>Madde 3: Hizmetin Niteliği ve Kapsamı</h2>
             <p>
-              <strong>3.1.</strong> Satıcı, Alıcı'ya platformu kullanma imkanı sunarken; araçların muayene, sigorta, vergi ve kasko süreleri için hatırlatıcı oluşturabilmesi amacıyla platform üzerinden ücretli hatırlatıcı hakkı paketleri yükleme imkanı sağlayacaktır. Hatırlatıcı hakkı yalnızca yeni hatırlatıcı oluşturma aşamasında düşülür.
+              <strong>3.1.</strong> Satıcı, Alıcı'ya platformu kullanma imkanı sunarken; araçların muayene, sigorta, vergi ve kasko süreleri için hatırlatıcı oluşturabilmesi amacıyla platform üzerinden ücretli hatırlatıcı hakkı paketleri satın alma imkanı sağlayacaktır. Hatırlatıcı hakkı yalnızca yeni hatırlatıcı oluşturma aşamasında <strong>kullanılır</strong>.
             </p>
             <p>
               <strong>3.2.</strong> Kullanıcıya tanınan hak, münhasır olmayan, devredilemeyen, alt lisans verilemeyen, yalnızca satın alınan hak adedi ve işbu Sözleşme koşulları çerçevesinde hatırlatıcı oluşturulması amacıyla kullanılabilen sınırlı bir kullanım hakkıdır.

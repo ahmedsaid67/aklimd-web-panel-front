@@ -16,7 +16,7 @@ export default function GizlilikPolitikasiPage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son güncelleme: 18.09.2026
+              Son güncelleme: 24.09.2026
             </p>
             <p>
               İşbu Gizlilik Politikası, Gökhan ADIGÜZEL (“Hizmet Sağlayıcı”) tarafından işletilen <strong>Aklımda</strong> mobil uygulamaları ve resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında toplanan ve işlenen verilerin kullanım esaslarını düzenler.

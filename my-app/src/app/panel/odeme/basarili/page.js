@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './page.module.css'; // İsteğe bağlı kendi stil dosyanız
+import styles from './page.module.css';
 
 export default function OdemeBasariliPage() {
     return (
@@ -7,11 +7,14 @@ export default function OdemeBasariliPage() {
             <div className={styles.card}>
                 <div className={styles.icon}>🎉</div>
                 <h1>Ödemeniz Başarıyla Gerçekleşti!</h1>
-                <p>Paket satın alma işleminiz başarıyla tamamlanmıştır. Kredileriniz hesabınıza yüklenmiştir.</p>
+                <p>Ödemeniz onaylanmıştır. Satın aldığınız paket kapsamındaki hatırlatıcı haklarınız hesabınıza tanımlanmıştır.</p>
                 
                 <div className={styles.buttonGroup}>
-                    <Link href="/panel" className={styles.primaryButton}>
-                        Panele Git
+                    <Link href="/panel/hatirlaticilar-ekle" className={styles.primaryButton}>
+                        Hatırlatıcı Oluştur
+                    </Link>
+                    <Link href="/panel/araclar/ekle" className={styles.secondaryButton}>
+                        Araç Ekle
                     </Link>
                 </div>
             </div>

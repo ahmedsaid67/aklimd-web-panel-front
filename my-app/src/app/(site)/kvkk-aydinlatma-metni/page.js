@@ -16,7 +16,7 @@ export default function KvkkPage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son Güncelleme Tarihi: 18.09.2026
+              Son Güncelleme Tarihi: 24.09.2026
             </p>
             <p>
               İşbu Aydınlatma Metni, Gökhan ADIGÜZEL (“Veri Sorumlusu”) tarafından işletilen <strong>Aklımda</strong> platformu (mobil uygulamalar ve resmi web sitesi: arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında, kişisel verilerinizin 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca işlenmesine ilişkin hususları açıklamak amacıyla hazırlanmıştır.

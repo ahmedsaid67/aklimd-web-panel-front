@@ -16,7 +16,7 @@ export default function KullanimKosullariPage() {
           
           <div className={styles.storyBlock}>
             <p style={{ fontStyle: 'italic', marginBottom: '2rem' }}>
-              Son Güncelleme Tarihi: 18.09.2026
+              Son Güncelleme Tarihi: 24.09.2026
             </p>
             <p>
               İşbu Kullanım Koşulları, Gökhan ADIGÜZEL (“Hizmet Sağlayıcı”) tarafından sunulan <strong>Aklımda</strong> mobil uygulamaları ve resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetlerin kullanım şartlarını belirler.

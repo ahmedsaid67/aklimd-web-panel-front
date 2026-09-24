@@ -29,6 +29,7 @@ export default function Footer() {
           <ul className={styles.footerLegalList}>
             <li><Link href="/mesafeli-satis-sozlesmesi" className={styles.footerLegalLink}>Mesafeli Satış Sözleşmesi</Link></li>
             <li><Link href="/on-bilgilendirme-formu" className={styles.footerLegalLink}>Ön Bilgilendirme Formu</Link></li>
+            <li><Link href="/iptal-iade-ve-teslimat-kosullari" className={styles.footerLegalLink}>İptal, İade ve Teslimat Koşulları</Link></li>
             <li><Link href="/privacy-policy" className={styles.footerLegalLink}>Gizlilik Politikası</Link></li>
             <li><Link href="/cerez-politikasi" className={styles.footerLegalLink}>Çerez Politikası</Link></li>
             <li><Link href="/kvkk-aydinlatma-metni" className={styles.footerLegalLink}>KVKK Aydınlatma Metni</Link></li>

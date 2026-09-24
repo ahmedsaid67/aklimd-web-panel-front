@@ -18,7 +18,7 @@ export default function Page({ onClose }) {
 
                     {/* Kaydırma Çubuğu Olan Metin Alanı */}
                     <div className={styles.scrollableTextContent}>
-                        <p className={styles.updateDate}><strong>Son Güncelleme Tarihi:</strong> 18.09.2026</p>
+                        <p className={styles.updateDate}><strong>Son Güncelleme Tarihi:</strong> 24.09.2026</p>
                         
                         <p>
                             İşbu Ön Bilgilendirme Formu; Gökhan ADIGÜZEL (“Hizmet Sağlayıcı”) tarafından işletilen Aklımda resmi web sitesi (arabamuayene.com.tr) üzerinden sunulan hizmetler kapsamında Alıcı&apos;yı bilgilendirmek amacıyla hazırlanmıştır.
