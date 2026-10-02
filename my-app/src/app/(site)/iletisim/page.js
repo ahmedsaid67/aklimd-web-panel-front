@@ -1,5 +1,10 @@
 import styles from './page.module.css';
 
+export const metadata = {
+  title: "Aklımda - İletişim",
+  description: "Aklımda ile ilgili her türlü soru ve destek talepleriniz için bize kolayca ulaşın.",
+};
+
 export default function IletisimPage() {
   return (
     <div className={styles.aboutPage}>

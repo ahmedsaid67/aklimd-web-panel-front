@@ -2,6 +2,13 @@ import styles from './page.module.css'
 import PanelMenu from '../../../compenents/PanelMenu/page'
 import PanelOtherMenu from '../../../compenents/PanelOtherMenu/page'
 
+export const metadata = {
+  title: "Aklımda - Panel",
+    icons: {
+    icon: '/aklimda-logo.png',
+  },
+};
+
 export default function Page ({ children, modal }){
   return (
     <div className={styles.mainContainer}>

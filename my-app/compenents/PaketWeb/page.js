@@ -50,6 +50,9 @@ export default function Page({ paket }) {
     };
 
     const handlePayment = async () => {
+
+        return setErrorRes("geliştirme sürecindeyiz. ödeme alt yapısı şimdilik hazır değil. en kısa sürede açılacaktır. lütfen daha sonra tekrar deneyiniz.")
+
         setIsLoading(true);
 
         const result = await odemeBaslat(pkg.id);

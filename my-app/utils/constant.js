@@ -11,8 +11,9 @@ export const API_ROUTES = {
   UPDATE_CREDIT : '/users/id/update-credit/',
   GET_PROFIL:'/users/profile/',
   GET_KULLANIM_OZETI:'/users/kullanim-ozeti/',
-  RESET_PASSWORD_CODE : '/password-reset/request-reset/' ,
-  RESET_PASSWORD : '/password-reset/reset-password/' ,
+  RESET_PASSWORD_CODE : '/password-reset/request-reset/',
+  RESET_PASSWORD : '/password-reset/reset-password/',
+  USER_DELETE : '/user-delete/',
   
 
   // billing profile

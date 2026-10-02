@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { ResetPassword } from './actions';
 import ErrorResetRes from '../ErrorResetRes/page';
 import SuccessRes from '../SuccessRes/page';
+import { Eye, EyeOff } from 'lucide-react'; // İkonları içe aktarıyoruz
+
 
 export default function PasswordResetPage() {
     const [code, setCode] = useState('');
@@ -14,6 +16,9 @@ export default function PasswordResetPage() {
     const [errorRes, setErrorRes] = useState(null); // Genel/Sunucu hataları için pop-up
     const [successRed, setSuccessRed] = useState(null); // Başarılı işlem modalı
     const router = useRouter();
+
+    // Şifre görünürlüğü için state
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -88,18 +93,28 @@ export default function PasswordResetPage() {
                     </div>
                     <div className={styles.inputContainer}>
                         <label className={styles.inputLabel}>Yeni Şifre</label>
-                        <input
-                            name="new_password"
-                            type="password"
-                            className={styles.inputClass}
-                            placeholder="••••••••"
-                            value={newPassword}
-                            onChange={(e) => {
-                                setNewPassword(e.target.value);
-                                setError('');
-                            }}
-                            disabled={loading}
-                        />
+                        <div className={styles.passwordWrapper}>
+                            <input
+                                name="new_password"
+                                type={showPassword ? "text" : "password"}
+                                className={styles.inputClass}
+                                placeholder="••••••••"
+                                value={newPassword}
+                                onChange={(e) => {
+                                    setNewPassword(e.target.value);
+                                    setError('');
+                                }}
+                                disabled={loading}
+                            />
+                            <button
+                                type="button"
+                                className={styles.eyeButton}
+                                onClick={() => setShowPassword(!showPassword)}
+                                aria-label="Şifreyi göster/gizle"
+                            >
+                                {showPassword ? <EyeOff className={styles.eyeIcon} /> : <Eye className={styles.eyeIcon} />}
+                            </button>
+                        </div>
                     </div>
                 </div>
 

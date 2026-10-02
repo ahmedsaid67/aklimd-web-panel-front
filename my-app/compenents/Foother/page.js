@@ -31,9 +31,9 @@ export default function Footer() {
             <li><Link href="/on-bilgilendirme-formu" className={styles.footerLegalLink}>Ön Bilgilendirme Formu</Link></li>
             <li><Link href="/iptal-iade-ve-teslimat-kosullari" className={styles.footerLegalLink}>İptal, İade ve Teslimat Koşulları</Link></li>
             <li><Link href="/privacy-policy" className={styles.footerLegalLink}>Gizlilik Politikası</Link></li>
-            <li><Link href="/cerez-politikasi" className={styles.footerLegalLink}>Çerez Politikası</Link></li>
             <li><Link href="/kvkk-aydinlatma-metni" className={styles.footerLegalLink}>KVKK Aydınlatma Metni</Link></li>
             <li><Link href="/terms-and-conditions" className={styles.footerLegalLink}>Kullanım Koşulları</Link></li>
+            <li><Link href="/cerez-politikasi" className={styles.footerLegalLink}>Çerez Politikası</Link></li>
             <li>
               <button 
                 onClick={handleOpenCookieSettings} 
@@ -43,6 +43,7 @@ export default function Footer() {
                 Çerez Ayarları
               </button>
             </li>
+            <li><Link href="/aklimda-hesap-sil" className={styles.footerLegalLink}>Hesap Sil</Link></li>
           </ul>
           <p>&copy; 2026 Aklımda. Tüm hakları saklıdır.</p>
         </div>

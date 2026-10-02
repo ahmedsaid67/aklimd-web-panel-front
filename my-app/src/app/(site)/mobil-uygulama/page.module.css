@@ -66,10 +66,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center; /* İçeriklerin ortalı durması için */
 }
 
 .card:hover {
   border-color: #1D64F2;
+}
+
+/* Kartın Üst Kısmı (İkon, Başlık, Açıklama) */
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* İkonu ve metinleri yatayda ortalar */
+}
+
+/* İkon Kutusu */
+.iconContainer {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.storeIcon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .card h3 {
@@ -82,12 +106,13 @@
   font-size: 1rem;
   color: #4B5563;
   line-height: 1.7;
-  margin: 0;
+  margin-bottom: 2rem; /* Butonla aradaki mesafe */
 }
 
 /* Mağaza İndirme Butonları */
 .storeButton {
-  display: inline-block;
+  display: block;
+  width: 100%;
   background-color: #1D64F2;
   color: #ffffff;
   font-weight: 600;
@@ -139,13 +164,19 @@
     padding: 1.5rem;
   }
 
+  .iconContainer {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
   .card h3 {
     font-size: 1.25rem;
   }
 
   .card p {
     font-size: 0.9rem;
-    margin-bottom: 1.25rem !important;
+    margin-bottom: 1.5rem;
   }
 
   .storeButton {

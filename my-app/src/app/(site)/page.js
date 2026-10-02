@@ -2,6 +2,11 @@ import styles from "./page.module.css";
 import Link from 'next/link';
 import { ShieldAlert, FileText, ShieldCheck, Calendar, ArrowRight } from 'lucide-react';
 
+export const metadata = {
+  title: "Aklımda - Takip ve Hatırlatma",
+  description: "Şirket araçlarınızın muayene, sigorta, kasko ve vergi tarihlerini tek ekrandan takip edin; SMS ve e-posta hatırlatıcılarıyla operasyonel aksaklıkları önleyin.",
+};
+
 export default function Home() {
   return (
     <div className={styles.page}>

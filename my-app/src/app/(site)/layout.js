@@ -8,7 +8,7 @@ import CookieConsent from '../../../compenents/CookieConsent/page';
 export default async function SiteLayout({ children }) {
   const cookieStore = await cookies();
   const token = cookieStore.get('accessToken');
-  const isAuthenticated = !!token;
+  const isAuthenticated = !!token && !!token.value && token.value.trim() !== ""; // farklı laoutda dırket null donsede anı layoytda valu:"" doner
 
   return (
     <>

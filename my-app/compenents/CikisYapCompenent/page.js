@@ -19,7 +19,6 @@ export default function Page() {
         
         if (response && response.success) {
             router.push('/');
-            router.refresh();
         } else {
             setMessage(response?.message);
             setIsLoading(false);

@@ -25,7 +25,7 @@
 
 /* İçerik Konteyneri */
 .contentSection {
-  padding: 6rem 1.5rem 6rem 1.5rem;
+  padding: 6rem 1.5rem;
 }
 
 .contentContainer {
@@ -36,22 +36,29 @@
   gap: 4rem;
 }
 
+/* Hikaye ve Hedef Bölümleri */
 .storyBlock h2,
 .visionBlock h2 {
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 1rem;
+  margin: 0 0 1.25rem;
 }
 
 .storyBlock p,
 .visionBlock p {
   font-size: 1.125rem;
   color: #4B5563;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
 }
 
-/* İki kolonlu genel kart yapısı (Altyapı ve Yaklaşım için) */
+.storyBlock p:last-child,
+.visionBlock p:last-child {
+  margin-bottom: 0;
+}
+
+/* İki kolonlu genel kart yapısı */
 .gridBlock {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -73,7 +80,7 @@
 .card h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
 }
 
 .card p {
@@ -98,21 +105,27 @@
   }
 
   .contentContainer {
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .storyBlock h2,
   .visionBlock h2 {
     font-size: 1.5rem;
     line-height: 1.3;
+    margin-bottom: 1rem;
   }
 
   .storyBlock p,
   .visionBlock p {
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-bottom: 1rem;
   }
 
+  .storyBlock p:last-child,
+  .visionBlock p:last-child {
+    margin-bottom: 0;
+  }
 
   .gridBlock {
     grid-template-columns: 1fr;
@@ -130,7 +143,4 @@
   .card p {
     font-size: 0.85rem;
   }
-
-
-  
 }

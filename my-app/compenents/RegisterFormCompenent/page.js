@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import SuccessRes from '../SuccessRes/page';
 import ErrorRes from '../ErrorRes/page';
 import Link from 'next/link';
+import { Eye, EyeOff } from 'lucide-react';
+
 
 export default function Page() {
     const [step, setStep] = useState(1);
@@ -24,6 +26,9 @@ export default function Page() {
     const [errorRes, setErrorRes] = useState(null);
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+
+    // Şifre görünürlüğü için state
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -171,7 +176,17 @@ export default function Page() {
                             </div>
                             <div className={styles.inputContainer}>
                                 <label className={styles.inputLabel}>Şifre</label>
-                                <input name="password" type="password" value={formData.password} placeholder="••••••••" className={styles.inputClass} onChange={handleChange} />
+                                <div className={styles.passwordWrapper}>
+                                    <input name="password" type={showPassword ? "text" : "password"} value={formData.password} placeholder="••••••••" className={styles.inputClass} onChange={handleChange} />
+                                    <button
+                                        type="button"
+                                        className={styles.eyeButton}
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        aria-label="Şifreyi göster/gizle"
+                                    >
+                                        {showPassword ? <EyeOff className={styles.eyeIcon} /> : <Eye className={styles.eyeIcon} />}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     )}

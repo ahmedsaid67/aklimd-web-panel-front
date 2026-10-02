@@ -75,6 +75,55 @@
     box-shadow: 0 0 0 3px rgba(29, 100, 242, 0.12);
 }
 
+/* --- Şifre İkonu & Konumlandırma Stilleri --- */
+
+/* Edge / IE için yerleşik ikon temizliği (Yerel sınıf içerdiği için hata vermez) */
+.inputClass::-ms-reveal,
+.inputClass::-ms-clear {
+    display: none;
+}
+
+/* Şifre inputu ve göz ikonunu aynı satırda konumlandırmak için wrapper */
+.passwordWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* İkon metnin üzerine binmesin diye sağdan boşluk bırakır */
+.passwordWrapper .inputClass {
+    padding-right: 2.75rem; 
+}
+
+/* Lucide ikonunun bulunduğu buton */
+/* Lucide ikonunun bulunduğu buton */
+.eyeButton {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.eyeButton:hover {
+    color: #334155;
+}
+
+/* İkonun boyutunu rem ile kontrol ediyoruz (Örn: 18px yaklaşık 1.125rem'e denk gelir) */
+.eyeIcon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+/* ------------------------------------------------ */
+
 .buttonContainer {
     font-size: 1rem;
     font-weight: 600;
@@ -93,6 +142,7 @@
     cursor: not-allowed;
     opacity: 0.5;
 }
+
 .buttonContainer:hover {
     background-color: #1551c9;
 }
@@ -100,7 +150,6 @@
 .buttonContainer:active {
     transform: scale(0.98);
 }
-
 
 .authLinks {
     margin: 1rem 0;
@@ -117,15 +166,11 @@
     gap: 0.25rem;
 }
 
-
-
 .bottomContainer {
     width: 100%;
-    /* Sabit alan: 3 hata satırı sığacak kadar veya ihtiyacına göre */
     height: 3.5rem; 
     margin-top: 1rem;
     flex-shrink: 0;
-    /* Eğer hiçbir hata yoksa bile bu div yer kaplasın diye */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -135,12 +180,11 @@
     background-color: #fef2f2;
     border: 0.08rem solid #fecaca;
     border-radius: 0.5rem;
-    padding: 0.5rem 0.75rem; /* Padding'i biraz kıstık */
+    padding: 0.5rem 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
 }
-
 
 .errorList {
     list-style-type: disc;
@@ -149,7 +193,7 @@
 }
 
 .errorText {
-    font-size: 0.7rem; /* Fontu biraz küçülttük */
+    font-size: 0.7rem;
     color: #b91c1c;
     font-weight: 500;
     line-height: 1.1;

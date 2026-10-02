@@ -1,5 +1,10 @@
 import styles from './page.module.css';
 
+export const metadata = {
+  title: "Aklımda - Mobil Uygulama",
+  description: "Aklımda mobil uygulamasını Android ve iOS cihazlarınıza indirin, araçlarınızı her an her yerden cebinizden yönetin.",
+};
+
 export default function MobilUygulamaPage() {
   return (
     <div className={styles.aboutPage}>
@@ -27,10 +32,15 @@ export default function MobilUygulamaPage() {
           <div className={styles.gridBlock}>
             {/* Google Play Kartı */}
             <div className={styles.card}>
-              <h3>Android Cihazlar İçin</h3>
-              <p style={{ marginBottom: '1.5rem' }}>
-                Google Play Store üzerinden Aklımda uygulamasını hemen indirin, Android cihazınızda hatırlatıcılarınızı yönetmeye başlayın.
-              </p>
+              <div className={styles.cardTop}>
+                <div className={styles.iconContainer}>
+                  <img src="/playstore.png" alt="Google Play" className={styles.storeIcon} />
+                </div>
+                <h3>Android Cihazlar İçin</h3>
+                <p>
+                  Google Play Store üzerinden Aklımda uygulamasını hemen indirin, Android cihazınızda hatırlatıcılarınızı yönetmeye başlayın.
+                </p>
+              </div>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.aklimda&hl=tr" 
                 target="_blank" 
@@ -43,10 +53,15 @@ export default function MobilUygulamaPage() {
 
             {/* App Store Kartı */}
             <div className={styles.card}>
-              <h3>iOS Cihazlar İçin</h3>
-              <p style={{ marginBottom: '1.5rem' }}>
-                App Store üzerinden Aklımda - Araç Muayene Hatırla uygulamasını cihazınıza yükleyin, iOS deneyimini keşfedin.
-              </p>
+              <div className={styles.cardTop}>
+                <div className={styles.iconContainer}>
+                  <img src="/appstore.png" alt="App Store" className={styles.storeIcon} />
+                </div>
+                <h3>iOS Cihazlar İçin</h3>
+                <p>
+                  App Store üzerinden Aklımda - Araç Muayene Hatırla uygulamasını cihazınıza yükleyin, iOS deneyimini keşfedin.
+                </p>
+              </div>
               <a 
                 href="https://apps.apple.com/tr/app/akl%C4%B1mda-ara%C3%A7-muayene-hat%C4%B1rla/id6762555253?l=tr" 
                 target="_blank" 

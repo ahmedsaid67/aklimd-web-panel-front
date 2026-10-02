@@ -1,5 +1,10 @@
 import styles from './page.module.css';
 
+export const metadata = {
+  title: "Aklımda - Hakkımızda",
+  description: "Araç muayene, sigorta, kasko ve vergi tarihlerini tek merkezden takip edin; SMS ve e-posta hatırlatıcılarıyla hiçbirini unutmayın.",
+};
+
 export default function HakkimizdaPage() {
   return (
     <div className={styles.aboutPage}>
@@ -13,14 +18,30 @@ export default function HakkimizdaPage() {
       {/* İçerik Alanı */}
       <section className={styles.contentSection}>
         <div className={styles.contentContainer}>
-          
+
           <div className={styles.storyBlock}>
             <h2>Hikayemiz Nasıl Başladı?</h2>
+
             <p>
-              Araçların sigorta, muayene, kasko ve vergi gibi kritik tarihlerini kâğıt üzerinde ya da hafızada takip etmeye çalışmanın ne denli riskli ve zorlu bir süreç olduğunu bizzat gözlemledik. Çok sayıda araç söz konusu olduğunda bu süreçlerin takibi kaçınılmaz bir karmaşaya yol açar; gözden kaçan bir muayene tarihi ya da unutulan bir vergi dönemi işletmelere ağır para cezaları yükler, araçların trafikten men edilmesine ve kritik saha operasyonlarının durmasına neden olur. <strong>Aklımda</strong>, tam olarak bu operasyonel riskleri ve son dakika randevu krizlerini ortadan kaldırmak için doğdu.
+              Birden fazla araca sahip işletmelerde; sigorta, muayene, kasko ve vergi tarihlerini takip etmek ciddi bir mesaidir. Araç sayısı arttıkça takip edilecek tarih yükü de fazlalaşır; bu yoğunlukta bazı tarihler unutulabilir, gözden kaçabilir ve yapılması gereken işlemler aksayabilir. 
             </p>
+
             <p>
-              Kasko ve trafik sigortası gibi poliçe yenileme tarihlerinin unutulması araçları trafikte güvencesiz bırakırken, işlemlerin son güne bırakılması uygun istasyon randevusu bulamamaya veya belge gecikmelerine yol açar. Biz; dilediğiniz kadar erken hatırlatma tarihi belirleyerek, SMS ve e-posta hatırlatıcıları sayesinde bu süreçlerde hep bir adım önde olmanızı; sigorta, muayene, kasko ve vergi takibinizi tek bir ekrandan yöneterek teminatlarınızı kesintisiz sürdürmenizi sağlıyoruz.
+              Özellikle muayene gibi randevu gerektiren süreçlerde son dakikaya kalındığında uygun randevu bulunamayabilir ve yasal süreler kaçırılabilir. <strong>Gözden kaçan veya zamanında planlanmayan işlemler ise para cezalarına, araçların kullanımında aksamalara ve işletmelerin operasyonlarında zaman ve iş kaybına yol açabilir.</strong>
+            </p>
+
+            <p>
+              <strong>İşte Aklımda, bu ihtiyaca bir çözüm sunmak için ortaya çıktı.</strong>{' '}
+              İşletmelerin araçlarına ait tarihleri tek bir merkezden takip
+              edebilmesini, bu tarihler için hatırlatmalar planlayabilmesini ve
+              işlemlerini son dakikaya bırakmadan yönetebilmesini sağlamak üzere
+              tasarlandı.
+            </p>
+
+            <p>
+              Aklımda ile sigorta, muayene, kasko ve vergi tarihleri için dilediğiniz kadar erken hatırlatma tarihi belirleyebilir; 
+              araçlarınızı ve hatırlatıcılarınızı yönetim paneli üzerinden kolayca yönetebilirsiniz. 
+              Belirlediğiniz tarihlerde SMS ve e-posta bildirimleri alarak gerekli işlemler için zamanında harekete geçebilirsiniz.
             </p>
           </div>
 
@@ -28,24 +49,37 @@ export default function HakkimizdaPage() {
             <div className={styles.card}>
               <h3>Güvenli ve Kararlı Altyapı</h3>
               <p>
-                Kullanıcı dostu arayüzün arkasında, verilerinizin güvenliğini ve bildirimlerin zamanında iletilmesini sağlayan kusursuz, kesintisiz bir sistem mimarisi yer alır.
+                Kullanıcı dostu arayüzün arkasında, verilerinizin güvenliğini ve
+                bildirimlerin zamanında iletilmesini sağlayan kusursuz, kesintisiz
+                bir sistem mimarisi yer alır.
               </p>
             </div>
+
             <div className={styles.card}>
               <h3>Odaklı ve Yerli Yaklaşım</h3>
               <p>
-                Bireysel araç sahiplerinden küçük, orta ve büyük ölçekli filolara kadar herkese nokta atışı, ölçeklenebilir ve tamamen ihtiyaç odaklı çözümler sunuyoruz.
+                Bireysel araç sahiplerinden küçük, orta ve büyük ölçekli filolara
+                kadar herkese nokta atışı, ölçeklenebilir ve tamamen ihtiyaç
+                odaklı çözümler sunuyoruz.
               </p>
             </div>
           </div>
 
           <div className={styles.visionBlock}>
             <h2>Neyi Hedefliyoruz?</h2>
+
             <p>
-              Amacımız; Türkiye'deki tüm araç sahiplerinin ve küçük, orta ve büyük ölçekli filoların omuzundaki sigorta, muayene, kasko ve vergi takip yükünü tamamen almak; unutkanlıktan doğan cezaları ve saha operasyonlarınızı durduran trafikten men risklerini ortadan kaldırmaktır.
+              Amacımız; Türkiye'deki tüm araç sahiplerinin ve küçük, orta ve
+              büyük ölçekli filoların omuzundaki sigorta, muayene, kasko ve vergi
+              takip yükünü tamamen almak; unutkanlıktan doğan cezaları ve saha
+              operasyonlarınızı durduran trafikten men risklerini ortadan
+              kaldırmaktır.
             </p>
+
             <p>
-              <strong>Aklımda</strong>; araçların sigorta, muayene, kasko ve vergi tarihlerini SMS ve e-posta hatırlatıcılarıyla eksiksiz yöneten, alanındaki en odaklı ve kesintisiz takip altyapısıdır.
+              <strong>Aklımda</strong>; araçların sigorta, muayene, kasko ve
+              vergi tarihlerini SMS ve e-posta hatırlatıcılarıyla eksiksiz
+              yöneten, alanındaki en odaklı ve kesintisiz takip altyapısıdır.
             </p>
           </div>
 

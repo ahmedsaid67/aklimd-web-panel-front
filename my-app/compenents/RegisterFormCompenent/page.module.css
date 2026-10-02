@@ -162,6 +162,56 @@
     box-shadow: 0 0 0 3px rgba(29, 100, 242, 0.12);
 }
 
+/* --- Şifre İkonu & Konumlandırma Stilleri --- */
+
+/* Edge / IE için yerleşik ikon temizliği (Yerel sınıf içerdiği için hata vermez) */
+.inputClass::-ms-reveal,
+.inputClass::-ms-clear {
+    display: none;
+}
+
+/* Şifre inputu ve göz ikonunu aynı satırda konumlandırmak için wrapper */
+.passwordWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* İkon metnin üzerine binmesin diye sağdan boşluk bırakır */
+.passwordWrapper .inputClass {
+    padding-right: 2.75rem; 
+}
+
+/* Lucide ikonunun bulunduğu buton */
+/* Lucide ikonunun bulunduğu buton */
+.eyeButton {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.eyeButton:hover {
+    color: #334155;
+}
+
+/* İkonun boyutunu rem ile kontrol ediyoruz (Örn: 18px yaklaşık 1.125rem'e denk gelir) */
+.eyeIcon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+
+
+
 .radioGroup {
     display: flex;
     flex-direction: column;

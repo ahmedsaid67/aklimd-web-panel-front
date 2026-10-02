@@ -2,7 +2,7 @@
 
 import styles from './page.module.css';
 import Link from 'next/link';
-import { Zap, ArrowRight, Sparkles } from 'lucide-react'; // Sparkles ikonu dikkat çekici bir hava katar
+import { Zap, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Page({ paketler }) {
     const packageList = paketler.results;
@@ -14,15 +14,15 @@ export default function Page({ paketler }) {
             <div className={styles.headerContainer}>
                 <h2 className={styles.formTitle}>Hatırlatıcı Paketleri</h2>
                 <div className={styles.formExplanation}>
-                    İhtiyacınıza uygun paketi seçerek hatırlatıcı hakkınızı hemen artırabilirsiniz.
+                    İhtiyacınıza uygun paketi seçerek hatırlatıcı hakkınızı hemen artırabilir; 
+                    abonelik derdi olmadan, süresiz kullanım avantajıyla haklarınızı dilediğiniz zaman kullanabilirsiniz.
                 </div>
             </div>
 
             {/* Paketler Grid Yapısı */}
             <div className={styles.packagesGrid}>
                 {packageList.map((pkg, index) => {
-                    // Örneğin 3. paket (index 2) için veya senin belirleyeceğin bir kritere göre etiket ekleyebiliriz
-                    const isFeatured = index === 2; // Veya pkg.id === 3 gibi kontrol edebilirsin
+                    const isFeatured = index === 2;
 
                     return (
                         <div key={pkg.id} className={`${styles.packageCard} ${isFeatured ? styles.featuredCard : ''}`}>

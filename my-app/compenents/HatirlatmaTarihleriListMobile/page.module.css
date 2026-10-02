@@ -12,7 +12,7 @@
 .modal {
     background: white;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;  /* bu dinamikleştiriyor özellikle tarayıcı barı ortaya çıktığında kalan alandan hesaplıyor, kalktığında yine mevcut alan için hesaplıyor */
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
