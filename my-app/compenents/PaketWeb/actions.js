@@ -8,7 +8,7 @@ import { redirect } from 'next/navigation';
 export async function odemeBaslat(packageId) {
     // 2. Tarayıcıdan gelen isteğin IP'sini yakaladık
     const headerList = await headers();
-    const clientIp = headerList.get("x-forwarded-for") || headerList.get("x-real-ip");
+    const clientIp = headerList.get("x-forwarded-for");
 
     // 3. İstek atarken X-Forwarded-For başlığını özel olarak ekledik
     const res = await apiClient(API_ROUTES.ODEME_BASLAT.replace("id", packageId), {
